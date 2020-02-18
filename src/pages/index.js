@@ -3,6 +3,8 @@ import { Helmet } from 'react-helmet'
 
 //import Image from "../components/image"
 //import SEO from "../components/seo"
+import Header from "../components/header"
+import Landing from "../components/landing"
 
 import "../styles/styles.scss"
 
@@ -15,7 +17,8 @@ const IndexPage = () => (
     </Helmet>
 
     <div>
-      <h1>Početna</h1>
+      <Header />
+      <Landing />
     </div>
 
   </main>

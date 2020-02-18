@@ -1,0 +1,58 @@
+@font-face {
+    font-family: "Slake";
+    src: url("../fonts/Slake_Regular.otf");
+}
+@font-face {
+    font-family: "Slake";
+    src: url("../fonts/Slake_Light.otf");
+    font-weight: lighter;
+}
+@font-face {
+    font-family: "Slake";
+    src: url("../fonts/Slake_Bold.otf");
+    font-style: bold;
+}
+
+html,
+body {
+    font-family: 'Slake';
+    font-size: 16px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+//Header
+header{
+    height: 80px;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    z-index: 10;
+
+    .inner-header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 80px;
+        .logo{
+            a {
+                text-decoration: none;
+                font-weight: bold;
+                letter-spacing: 1.5px;
+                color: #000;
+            }
+        }
+
+        .header-menu{
+            a{
+                text-decoration: none;
+                font-weight: bold;
+                letter-spacing: 1.5px;
+                color: #000;
+            }
+        }
+    }
+}
