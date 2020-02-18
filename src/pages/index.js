@@ -1,5 +1,6 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Helmet } from 'react-helmet'
+import gsap from "gsap"
 
 //import Image from "../components/image"
 //import SEO from "../components/seo"
@@ -8,12 +9,36 @@ import Landing from "../components/landing"
 
 import "../styles/styles.scss"
 
-const IndexPage = () => (
-  <main>
+function IndexPage() {
+
+  useEffect(() => {
+    //gsap timeline
+    const tl = gsap.timeline();
+
+    tl.from(".landing-text", 2, {
+      opacity: 0,
+      y: 50,
+      ease: "power4.out",
+      skewY: 2,
+      stagger: {amount: 0.3}
+    }).from(".header-menu, .logo", 1.5, {
+      opacity: 0,
+      y: 10,
+      ease: "power4.out",
+      stagger: {amount: 0.3}
+    }).from(".icon-scroll", 4, {
+      opacity: 0,
+      y: -10,
+      ease: "power4.out"
+    })
+
+}, []);
+
+  return (
+    <main>
     <Helmet>
       <html lang="hr" />
       <title>ARTERION obrt za dizajn</title>
-      <description>ARTERION obrt za dizajn radi 3D vizualizacije interijera, eksterijera i raznih proizvoda.</description>
     </Helmet>
 
     <div>
@@ -22,6 +47,8 @@ const IndexPage = () => (
     </div>
 
   </main>
-)
+  );
+}
+
 
 export default IndexPage
