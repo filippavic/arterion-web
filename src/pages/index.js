@@ -1,21 +1,24 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Helmet } from 'react-helmet'
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+//import Image from "../components/image"
+//import SEO from "../components/seo"
+
+import "../styles/styles.scss"
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+  <main>
+    <Helmet>
+      <html lang="hr" />
+      <title>ARTERION obrt za dizajn</title>
+      <description>ARTERION obrt za dizajn radi 3D vizualizacije interijera, eksterijera i raznih proizvoda.</description>
+    </Helmet>
+
+    <div>
+      <h1>Početna</h1>
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+
+  </main>
 )
 
 export default IndexPage
