@@ -31,7 +31,7 @@ const Landing = () => {
                 </div>
 
                 <div className="landing-image">
-                    <Lottie options={defaultOptions} className="landing-animation" id="landing-animation"
+                    <Lottie options={defaultOptions} isClickToPauseDisabled={true} className="landing-animation" id="landing-animation"
                     />
                 </div>
             </div>
