@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import { React, useState } from "react"
+import { translate } from "translate-js"
 
 function Header() {
 
@@ -25,6 +26,20 @@ function Header() {
      }
   });
 
+  function getLocale() {
+    var lang = "";
+    if (navigator.languages !== undefined) lang = navigator.languages[0]; 
+    else lang = navigator.language;
+
+    if (lang.substring(0,2).localeCompare("hr") !== 0) return "en"
+    else return "hr"
+  }
+
+  var locale = getLocale();
+
+  translate.add({contact: 'KONTAKT', country: 'Hrvatska'}, 'hr');
+  translate.add({contact: 'CONTACT', country: 'Croatia'}, 'en');
+
   return(
     <div className="header-and-menu">
       <header>
@@ -36,7 +51,7 @@ function Header() {
             </div>
 
             <div className="header-menu">
-                <a className="contact-animate" id="contact-button" onClick={() => setMenu(true)}>KONTAKT</a>
+  <a className="contact-animate" id="contact-button" onClick={() => setMenu(true)}>{translate('contact', null, {locale: locale})}</a>
               </div>
           </div>
         </div>
@@ -53,9 +68,9 @@ function Header() {
         </div>
 
         <div className="company-info">
-            <h3>Jalsje 22, Jalsje</h3>
-            <h3>Veliko Trgovisce</h3>
-            <h3>Hrvatska</h3>
+            <h3>Jalšje 22, Jalšje</h3>
+            <h3>Veliko Trgovišće</h3>
+            <h3>{translate('country', null, {locale: locale})}</h3>
         </div>
       </div>
     </div>

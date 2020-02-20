@@ -7,49 +7,52 @@ $ease-in-out-cubic: cubic-bezier(0.145,  0.045, 0.155, 1.000);
 $cubic-transition: 0.5s $ease-in-out-cubic;
 
 @font-face {
-    font-family: "Slake";
-    src: url("../fonts/Slake_Regular.otf");
-}
-@font-face {
-    font-family: "Slake";
-    src: url("../fonts/Slake_Light.otf");
-    font-weight: lighter;
-}
-@font-face {
-    font-family: "Slake";
-    src: url("../fonts/Slake_Bold.otf");
-    font-style: bold;
+  font-family: "Manrope";
+  src: url("../fonts/Manrope-Regular.woff2") format('woff2');
+  font-weight: 400;
 }
 
 @font-face {
-  font-family: "Metropolis";
-  src: url("../fonts/Metropolis-Regular.woff");
-  font-style: normal;
+  font-family: "Manrope";
+  src: url("../fonts/Manrope-Light.woff2") format('woff2');
+  font-weight: 300;
 }
 
 @font-face {
-  font-family: "Metropolis";
-  src: url("../fonts/Metropolis-Thin.woff");
-  font-style: light;
+    font-family: "Manrope";
+    src: url("../fonts/Manrope-ExtraLight.woff2") format('woff2');
+    font-weight: 200;
+  }
+
+@font-face {
+  font-family: "Manrope";
+  src: url("../fonts/Manrope-Medium.woff2") format('woff2');
+  font-weight: 500;
 }
 
 @font-face {
-  font-family: "Metropolis";
-  src: url("../fonts/Metropolis-SemiBold.woff");
-  font-style: bold;
+  font-family: "Manrope";
+  src: url("../fonts/Manrope-SemiBold.woff2") format('woff2');
+  font-weight: 600;
 }
 
 @font-face {
-  font-family: "Metropolis";
-  src: url("../fonts/Metropolis-ExtraBold.woff");
-  font-style: black;
+    font-family: "Manrope";
+    src: url("../fonts/Manrope-Bold.woff2") format('woff2');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Manrope";
+    src: url("../fonts/Manrope-ExtraBold.woff2") format('woff2');
+    font-weight: 800;
 }
 
 
 
 html,
 body {
-    font-family: 'Slake';
+    font-family: 'Manrope';
     font-size: 16px;
     background-color: $black;
 }
@@ -172,7 +175,7 @@ header{
   }
 
   h3{
-      font-family: 'Slake';
+      font-family: 'Manrope';
       color: #fff;
   }
 
@@ -238,13 +241,13 @@ header{
             z-index: 2;
 
             h1{
-                font-family: 'Slake';
+                font-family: 'Manrope';
                 font-weight: bold;
                 font-size: calc(3vw + 4vh + 2vmin);
             }
 
             h2{
-                font-family: 'Slake';
+                font-family: 'Manrope';
                 font-size: calc(1vw + 1vh + 1vmin);
                 font-weight: lighter !important;
 
@@ -421,7 +424,7 @@ header{
 
       a{
         text-decoration: none;
-        font-family: 'Slake';
+        font-family: 'Manrope';
         font-size: calc(12px + (19 - 12) * ((100vw - 300px) / (1600 - 300)));
         color: #fff;
         margin-bottom: 20px;
@@ -440,7 +443,7 @@ header{
       justify-content: center;
 
       h3{
-        font-family: 'Slake';
+        font-family: 'Manrope';
         font-size: calc(10px + (16 - 10) * ((100vw - 300px) / (1600 - 300)));
         color: #fff;
         margin-bottom: 10px;
@@ -463,8 +466,9 @@ header{
 
     a{
       text-decoration: none;
-      font-family: 'Slake';
+      font-family: 'Manrope';
       font-size: 10px;
+      font-weight: 600;
       color: #fff;
 
       &:hover{
@@ -474,8 +478,4 @@ header{
     }
   }
 
-  .dotted-background{
-    position: absolute;
-    z-index: 50;
-  }
 }

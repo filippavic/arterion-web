@@ -1,7 +1,21 @@
-import React from "react"
-
+import { React } from "react"
+import { translate } from "translate-js"
 
 const Contact = () => {
+
+    function getLocale() {
+        var lang = "";
+        if (navigator.languages !== undefined) lang = navigator.languages[0]; 
+        else lang = navigator.language;
+    
+        if (lang.substring(0,2).localeCompare("hr") !== 0) return "en"
+        else return "hr"
+      }
+    
+    var locale = getLocale();
+    
+    translate.add({country: 'Hrvatska'}, 'hr');
+    translate.add({country: 'Croatia'}, 'en');
 
     return (
         <div className="contact-cont">
@@ -19,9 +33,9 @@ const Contact = () => {
 
                 <div className="contact-right">
                     <h3 id="company-title">ARTERION obrt za dizajn</h3>
-                    <h3>Jalsje 22, Jalsje</h3>
-                    <h3>Veliko Trgovisce</h3>
-                    <h3>Hrvatska</h3>
+                    <h3>Jalšje 22, Jalšje</h3>
+                    <h3>Veliko Trgovišće</h3>
+                    <h3>{translate('country', null, {locale: locale})}</h3>
                 </div>
             </div>
 

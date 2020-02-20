@@ -1,13 +1,13 @@
-import React, { useEffect } from "react"
+import { React, useEffect } from "react"
 import { Helmet } from 'react-helmet'
-import gsap from "gsap"
+import { gsap } from "gsap"
 
 //import Image from "../components/image"
 //import SEO from "../components/seo"
-import Header from "../components/header"
-import Landing from "../components/landing"
-import Menu from "../components/menu"
-import Contact from "../components/contact"
+import { Header } from "../components/header"
+import { Landing } from "../components/landing"
+import { Menu } from "../components/menu"
+import { Contact } from "../components/contact"
 
 import "../styles/styles.scss"
 
@@ -41,10 +41,11 @@ function IndexPage() {
 
 }, []);
 
+
   return (
     <main>
     <Helmet>
-      <html lang="hr" />
+      <html lang="en" />
       <title>ARTERION obrt za dizajn</title>
     </Helmet>
 

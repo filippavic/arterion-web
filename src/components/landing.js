@@ -1,7 +1,8 @@
-import React from "react"
+import { React } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
-import Lottie from 'react-lottie'
+import { Img } from "gatsby-image"
+import { translate } from "translate-js"
+import { Lottie } from 'react-lottie'
 import * as animationData from '../images/arterion_sketch_white.json'
 
 const Landing = () => {
@@ -15,6 +16,20 @@ const Landing = () => {
       }
     }
 
+    function getLocale() {
+        var lang = "";
+        if (navigator.languages !== undefined) lang = navigator.languages[0]; 
+        else lang = navigator.language;
+    
+        if (lang.substring(0,2).localeCompare("hr") !== 0) return "en"
+        else return "hr"
+      }
+    
+    var locale = getLocale();
+    
+    translate.add({title1: '3D vizualizacije', title2: 'interijera, eksterijera i proizvoda'}, 'hr');
+    translate.add({title1: '3D visualizations:', title2: 'interior, exterior and products'}, 'en');
+
     return (
         <div className="landing">
             <div className="container">
@@ -22,10 +37,10 @@ const Landing = () => {
                     <h1 id="landing-headline">ARTERION</h1>
                     <h2>
                         <div className="line">
-                            <span>3D vizualizacije</span>
+                            <span>{translate('title1', null, {locale: locale})}</span>
                         </div>
                         <div className="line">
-                            <span>interijera, eksterijera i proizvoda</span>
+                            <span>{translate('title2', null, {locale: locale})}</span>
                         </div>
                     </h2>
                 </div>
