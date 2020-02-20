@@ -1,17 +1,20 @@
-import React from "react"
+import React, { useState } from "react"
 import translate from "translate-js"
 import Lottie from 'react-lottie'
-import * as contactAnimationData from '../images/contact_hr.json'
+import ScrollTrigger from 'react-scroll-trigger';
+import * as contactAnimationDataHR from '../images/contact_hr.json'
+import * as contactAnimationDataEN from '../images/contact_en.json'
 
 const Contact = () => {
 
-    var defaultOptions = {
-        loop: false,
-        autoplay: true, 
-        animationData: contactAnimationData.default,
-        rendererSettings: {
-        preserveAspectRatio: 'xMidYMid slice'
-      }
+    const [isStopped, setStopped] = useState(true);
+
+    const onEnterViewport = () => {
+        setStopped(false);
+    }
+
+    const onExitViewport = () => {
+        setStopped(true);
     }
 
     function getLocale() {
@@ -26,17 +29,30 @@ const Contact = () => {
     }
     
     var locale = getLocale();
+
+    var defaultOptions = {
+        loop: false,
+        autoplay: false, 
+        animationData: (locale.localeCompare("hr") == 0) ? contactAnimationDataHR.default : contactAnimationDataEN.default,
+        rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice'
+      }
+    }
+
     
     translate.add({country: 'Hrvatska'}, 'hr');
     translate.add({country: 'Croatia'}, 'en');
 
+    
     return (
         <div className="contact-cont">
+                
             <div className="contact-bg"></div>
 
             <div className="contact-top">
                 <div className="contact-animation-cont">
-                    <Lottie options={defaultOptions} isClickToPauseDisabled={true} className="contact-animation" id="contact-animation"
+                    <ScrollTrigger onEnter={() => onEnterViewport()} onExit={() => onExitViewport()} />
+                    <Lottie options={defaultOptions} isStopped = {isStopped} isClickToPauseDisabled={true} className="contact-animation" id="contact-animation"
                     />
                 </div>
             </div>
