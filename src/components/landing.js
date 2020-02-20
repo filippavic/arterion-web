@@ -18,12 +18,14 @@ const Landing = () => {
 
     function getLocale() {
         var lang = "";
-        if (navigator.languages !== undefined) lang = navigator.languages[0]; 
-        else lang = navigator.language;
+        if (typeof navigator !== "undefined"){
+          if (navigator.languages !== undefined) lang = navigator.languages[0]; 
+          else lang = navigator.language;
     
-        if (lang.substring(0,2).localeCompare("hr") !== 0) return "en"
-        else return "hr"
-      }
+          if (lang.substring(0,2).localeCompare("hr") !== 0) return "en"
+          else return "hr"
+        }
+    }
     
     var locale = getLocale();
     
