@@ -22,11 +22,14 @@ function Header() {
   }*/
 
   //close menu on outside click
-  window.addEventListener('click', function(e){
-     if(element && !element.contains(e.target) && isMenuOpen){
-       openCloseMenu();
-     }
-  });
+  if (typeof window !== "undefined") {
+    window.addEventListener('click', function(e){
+      if(element && !element.contains(e.target) && isMenuOpen){
+        openCloseMenu();
+      }
+   });
+  }
+  
 
   function getLocale() {
     var lang = "";
