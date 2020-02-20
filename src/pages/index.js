@@ -6,7 +6,6 @@ import gsap from "gsap"
 //import SEO from "../components/seo"
 import Header from "../components/header"
 import Landing from "../components/landing"
-import Menu from "../components/menu"
 import Contact from "../components/contact"
 
 import "../styles/styles.scss"

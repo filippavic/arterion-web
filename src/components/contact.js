@@ -7,8 +7,10 @@ import * as contactAnimationDataEN from '../images/contact_en.json'
 
 const Contact = () => {
 
+    //Lotie toggle
     const [isStopped, setStopped] = useState(true);
 
+    //scroll trigger
     const onEnterViewport = () => {
         setStopped(false);
     }
@@ -17,6 +19,7 @@ const Contact = () => {
         setStopped(true);
     }
 
+    //localization
     function getLocale() {
         var lang = "";
         if (typeof navigator !== "undefined"){
@@ -30,20 +33,20 @@ const Contact = () => {
     
     var locale = getLocale();
 
+    translate.add({country: 'Hrvatska'}, 'hr');
+    translate.add({country: 'Croatia'}, 'en');
+
+
+    //Lottie options
     var defaultOptions = {
         loop: false,
         autoplay: false, 
-        animationData: (locale.localeCompare("hr") == 0) ? contactAnimationDataHR.default : contactAnimationDataEN.default,
+        animationData: (locale.localeCompare("hr") === 0) ? contactAnimationDataHR.default : contactAnimationDataEN.default,
         rendererSettings: {
         preserveAspectRatio: 'xMidYMid slice'
       }
     }
 
-    
-    translate.add({country: 'Hrvatska'}, 'hr');
-    translate.add({country: 'Croatia'}, 'en');
-
-    
     return (
         <div className="contact-cont">
                 
