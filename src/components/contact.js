@@ -1,7 +1,18 @@
 import React from "react"
 import translate from "translate-js"
+import Lottie from 'react-lottie'
+import * as contactAnimationData from '../images/contact_hr.json'
 
 const Contact = () => {
+
+    var defaultOptions = {
+        loop: false,
+        autoplay: true, 
+        animationData: contactAnimationData.default,
+        rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice'
+      }
+    }
 
     function getLocale() {
         var lang = "";
@@ -22,7 +33,10 @@ const Contact = () => {
             <div className="contact-bg"></div>
 
             <div className="contact-top">
-                <h1>KONTAKT</h1>
+                <div className="contact-animation-cont">
+                    <Lottie options={defaultOptions} isClickToPauseDisabled={true} className="contact-animation" id="contact-animation"
+                    />
+                </div>
             </div>
 
             <div className="contact-middle">

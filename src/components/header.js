@@ -9,10 +9,12 @@ function Header() {
     setMenu(!isMenuOpen);
   }
 
-  var element = document.getElementById('menu');
+  var element = (typeof document !== `undefined`) ? document.getElementById('menu') : null;
+  //var element = document.getElementById('menu');
 
   //open menu
-  /*var contactButton = document.querySelector("contact-animate");
+  /*var contactButton = (typeof document !== `undefined`) ? document.querySelector("contact-animate") : null;
+  //var contactButton = document.querySelector("contact-animate");
   if (contactButton){
     contactButton.addEventListener('click', function() {
       openCloseMenu();   

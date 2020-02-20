@@ -396,16 +396,11 @@ header{
   .contact-top{
     flex-basis: 30%;
     padding-top: 80px;
-    padding-left: 5%;
+    padding-left: 3%;
     z-index: 2;
 
-    h1{
-      font-family: 'Metropolis';
-      font-weight: black;
-      font-size: calc(50px + (150 - 50) * ((100vw - 300px) / (1600 - 300)));
-      color: rgba(0, 0, 0, 0);
-      -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: $accent-color;
+    .contact-animation-cont{
+        width: 70%;
     }
   }
 
