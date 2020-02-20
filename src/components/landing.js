@@ -1,8 +1,8 @@
-import { React } from "react"
+import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { Img } from "gatsby-image"
-import { translate } from "translate-js"
-import { Lottie } from 'react-lottie'
+import Img from "gatsby-image"
+import translate from "translate-js"
+import Lottie from 'react-lottie'
 import * as animationData from '../images/arterion_sketch_white.json'
 
 const Landing = () => {

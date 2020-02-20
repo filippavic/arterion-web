@@ -1,8 +1,8 @@
 //eksperimentalno
 //za brisanje
 
-import { React } from "react"
-import { gsap } from "gsap"
+import React from "react"
+import gsap from "gsap"
 
 import "../components/menu2.scss"
 

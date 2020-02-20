@@ -1,5 +1,5 @@
-import { React } from "react"
-import { translate } from "translate-js"
+import React from "react"
+import translate from "translate-js"
 
 const Contact = () => {
 

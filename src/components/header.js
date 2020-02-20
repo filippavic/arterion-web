@@ -1,5 +1,5 @@
-import { React, useState } from "react"
-import { translate } from "translate-js"
+import React, { useState } from "react"
+import translate from "translate-js"
 
 function Header() {
 
