@@ -33,8 +33,8 @@ const Contact = () => {
     
     var locale = getLocale();
 
-    translate.add({country: 'Hrvatska'}, 'hr');
-    translate.add({country: 'Croatia'}, 'en');
+    translate.add({country: 'Hrvatska', owner: 'vl. Siniša Slovenec'}, 'hr');
+    translate.add({country: 'Croatia', owner: 'owner: Siniša Slovenec'}, 'en');
 
 
     //Lottie options
@@ -70,14 +70,14 @@ const Contact = () => {
 
                 <div className="contact-right">
                     <h3 id="company-title">ARTERION obrt za dizajn</h3>
-                    <h3>Jalšje 22, Jalšje</h3>
-                    <h3>Veliko Trgovišće</h3>
+                    <h3>{translate('owner', null, {locale: locale})}</h3>
+                    <h3>Jalšje 22, Veliko Trgovišće</h3>
                     <h3>{translate('country', null, {locale: locale})}</h3>
                 </div>
             </div>
 
             <div className="contact-bottom">
-                <a href="https://apeiron.media">Made by apeiron</a>
+                <a href="https://apeiron.media">Made with &hearts; by apeiron</a>
             </div>
         </div>
     )

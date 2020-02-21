@@ -77,8 +77,8 @@ function Header() {
 
   var locale = getLocale();
 
-  translate.add({contact: 'KONTAKT', country: 'Hrvatska'}, 'hr');
-  translate.add({contact: 'CONTACT', country: 'Croatia'}, 'en');
+  translate.add({contact: 'KONTAKT', country: 'Hrvatska', owner: 'vl. Siniša Slovenec'}, 'hr');
+  translate.add({contact: 'CONTACT', country: 'Croatia', owner: 'owner: Siniša Slovenec'}, 'en');
 
 
   return(
@@ -91,7 +91,7 @@ function Header() {
             </div>
 
             <div className="header-menu">
-              <a className="contact-animate" id="contact-button" onClick={() => openCloseMenu()}>{translate('contact', null, {locale: locale})}</a>
+              <a role="button" tabIndex={0} className="contact-animate" id="contact-button" onClick={() => openCloseMenu()}>{translate('contact', null, {locale: locale})}</a>
             </div>
           </div>
         </div>
@@ -99,7 +99,7 @@ function Header() {
 
       <div className={isMenuOpen ? "menu-cont is-open" : "menu-cont"} id='menu'>
         <div className="menu-info">
-            <a className="close-button" onClick={() => openCloseMenu()}>x</a>
+            <a role="button" tabIndex={0} className="close-button" onClick={() => openCloseMenu()}>x</a>
             <h3>{translate('contact', null, {locale: locale})}</h3>
         </div>
 
@@ -109,8 +109,8 @@ function Header() {
         </div>
 
         <div className="company-info">
-            <h3>Jalšje 22, Jalšje</h3>
-            <h3>Veliko Trgovišće</h3>
+            <h3>{translate('owner', null, {locale: locale})}</h3>
+            <h3>Jalšje 22, Veliko Trgovišće</h3>
             <h3>{translate('country', null, {locale: locale})}</h3>
         </div>
       </div>

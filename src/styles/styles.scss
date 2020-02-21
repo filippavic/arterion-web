@@ -479,9 +479,11 @@ header{
   .contact-bottom{
     flex-basis: 25%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: flex-end;
     z-index: 2;
+    padding-right: 20px;
+    padding-bottom: 10px;
 
     a{
       text-decoration: none;
@@ -489,6 +491,7 @@ header{
       font-size: 10px;
       font-weight: 600;
       color: #fff;
+      text-transform: uppercase;
 
       &:hover{
         color: $accent-color;

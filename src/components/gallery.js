@@ -3,7 +3,6 @@ import React, { useState } from "react"
 // import Img from "gatsby-image"
 import Lottie from "react-lottie"
 import ScrollTrigger from "react-scroll-trigger"
-import Zoom from 'react-medium-image-zoom'
 import * as interiorAnimationDataHR from "../images/interior_hr.json"
 import * as interiorAnimationDataEN from "../images/interior_en.json"
 import * as exteriorAnimationDataHR from "../images/exterior_hr.json"
@@ -12,7 +11,6 @@ import * as productAnimationDataHR from "../images/products_hr.json"
 import * as productAnimationDataEN from "../images/products_en.json"
 
 import "./gallery.scss"
-import 'react-medium-image-zoom/dist/styles.css'
 
 function Gallery(props) {
   //Lotie toggle
@@ -31,15 +29,15 @@ function Gallery(props) {
     setStopped3(false)
   }
 
-  // const onExitViewport1 = () => {
-  //   setStopped1(true)
-  // }
-  // const onExitViewport2 = () => {
-  //   setStopped2(true)
-  // }
-  // const onExitViewport3 = () => {
-  //   setStopped3(true)
-  // }
+  const onExitViewport1 = () => {
+     setStopped1(true)
+  }
+  const onExitViewport2 = () => {
+    setStopped2(true)
+  }
+  const onExitViewport3 = () => {
+    setStopped3(true)
+  }
 
   //localization
   function getLocale() {
@@ -98,28 +96,32 @@ function Gallery(props) {
   return (
     <div className="gallery">
       <div className="galleryContainer">
-        <div className="titleGallery" id="trigger1">
-          <ScrollTrigger
+        <ScrollTrigger
             onEnter={() => onEnterViewport1()}
-            // onExit={() => onExitViewport1()}
-          />
+            onExit={() => onExitViewport1()}
+        >
+          <div className="titleGallery" id="trigger1">
 
-          <Lottie
-            options={defaultOptions1}
-            isStopped={isStopped1}
-            isClickToPauseDisabled={true}
-            className="interior-animation"
-            id="interior-animation"
-          />
+            <Lottie
+              options={defaultOptions1}
+              isStopped={isStopped1}
+              isClickToPauseDisabled={true}
+              speed={1.5}
+              className="interior-animation"
+              id="interior-animation"
+            />
+          </div>
+        </ScrollTrigger>
+        <div className="leftTopGallery">
+        
         </div>
-        <div className="leftTopGallery"></div>
         <div className="rightTopGallery">
-          <Zoom overlayBgColorEnd="rgba(0,0,0,0.9)" overlayBgColorStart="rgba(0,0,0,0)"><img src={props.imagetop1} className="grayscale"/></Zoom>
+          <img src={props.imagetop1} className="grayscale" alt="Interior visualization"/>
         </div>
       </div>
       <div className="bottomGalleryContainer">
         <div className="leftBottomGallery">
-          <img src={props.imagebottom1} className="grayscale" />
+          <img src={props.imagebottom1} className="grayscale" alt="Interior visualization"/>
         </div>
         <div className="rightBottomGallery"></div>
       </div>
@@ -127,25 +129,27 @@ function Gallery(props) {
         <div className="titleGallery" id="trigger2">
           <ScrollTrigger
             onEnter={() => onEnterViewport2()}
-            // onExit={() => onExitViewport2()}
-          />
+            onExit={() => onExitViewport2()}
+          >
 
-          <Lottie
-            options={defaultOptions2}
-            isStopped={isStopped2}
-            isClickToPauseDisabled={true}
-            className="interior-animation"
-            id="interior-animation"
-          />
+            <Lottie
+              options={defaultOptions2}
+              isStopped={isStopped2}
+              isClickToPauseDisabled={true}
+              speed={1.5}
+              className="interior-animation"
+              id="interior-animation"
+            />
+          </ScrollTrigger>
         </div>
         <div className="leftTopGallery"></div>
         <div className="rightTopGallery">
-          <img src={props.imagetop2} className="grayscale" />
+          <img src={props.imagetop2} className="grayscale" alt="Exterior visualization"/>
         </div>
       </div>
       <div className="bottomGalleryContainer">
         <div className="leftBottomGallery">
-          <img src={props.imagebottom2} className="grayscale" />
+          <img src={props.imagebottom2} className="grayscale" alt="Exterior visualization"/>
         </div>
         <div className="rightBottomGallery"></div>
       </div>
@@ -153,25 +157,26 @@ function Gallery(props) {
         <div className="titleGallery" id="trigger3">
           <ScrollTrigger
             onEnter={() => onEnterViewport3()}
-            // onExit={() => onExitViewport3()}
-          />
-
-          <Lottie
-            options={defaultOptions3}
-            isStopped={isStopped3}
-            isClickToPauseDisabled={true}
-            className="product-animation"
-            id="product-animation"
-          />
+            onExit={() => onExitViewport3()}
+          >
+            <Lottie
+              options={defaultOptions3}
+              isStopped={isStopped3}
+              isClickToPauseDisabled={true}
+              speed={1.5}
+              className="product-animation"
+              id="product-animation"
+            />
+          </ScrollTrigger>
         </div>
         <div className="leftTopGallery"></div>
         <div className="rightTopGallery">
-          <img src={props.imagetop3} className="grayscale" />
+          <img src={props.imagetop3} className="grayscale" alt="Product visualization"/>
         </div>
       </div>
       <div className="bottomGalleryContainer">
         <div className="leftBottomGallery">
-          <img src={props.imagebottom3} className="grayscale" />
+          <img src={props.imagebottom3} className="grayscale" alt="Product visualization"/>
         </div>
         <div className="rightBottomGallery"></div>
       </div>
