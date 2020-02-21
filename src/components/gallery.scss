@@ -1,8 +1,8 @@
 .text-line text {
   visibility: visible;
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: dash 2s forwards;
+  stroke-dasharray: calc(100vw / 3);
+  stroke-dashoffset: calc(100vw / 3);
+  animation: dash 4s forwards;
 }
 
 @keyframes dash {
@@ -19,7 +19,7 @@
   width: 100%;
   height: 100%;
   position: relative;
-  overflow: auto;
+  overflow: hidden;
   display: flex;
   margin-top: -30px;
 }
@@ -43,7 +43,7 @@
   width: 100%;
   height: 100%;
   position: relative;
-  overflow: auto;
+  overflow: hidden;
   display: flex;
   margin-top: -31px;
 }
@@ -68,6 +68,7 @@
 }
 
 .grayscale {
+  width: 100%;
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
   -webkit-transition: 0.3s ease-in-out;

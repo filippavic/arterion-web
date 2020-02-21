@@ -2,10 +2,34 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { Controller, Scene } from "react-scrollmagic"
+import translate from "translate-js"
 
 import "./gallery.scss"
 
 function Gallery(props) {
+  //localization
+  function getLocale() {
+    var lang = ""
+    if (typeof navigator !== "undefined") {
+      if (navigator.languages !== undefined) lang = navigator.languages[0]
+      else lang = navigator.language
+
+      if (lang.substring(0, 2).localeCompare("hr") !== 0) return "en"
+      else return "hr"
+    }
+  }
+
+  var locale = getLocale()
+
+  translate.add({ interior: "INTERIJER" }, "hr")
+  translate.add({ interior: "INTERIOR" }, "en")
+
+  translate.add({ exterior: "EKSTERIJER" }, "hr")
+  translate.add({ exterior: "EXTERIOR" }, "en")
+
+  translate.add({ product: "PROIZVODI" }, "hr")
+  translate.add({ product: "PRODUCTS" }, "en")
+
   return (
     <div className="gallery">
       <div className="galleryContainer">
@@ -15,7 +39,7 @@ function Gallery(props) {
               classToggle="text-line"
               triggerElement="#trigger1"
               duration="0"
-              triggerHook="0.8"
+              triggerHook="0.9"
             >
               <svg height="16vw" width="60vw" stroke="#000000" stroke-width="1">
                 <text
@@ -27,7 +51,7 @@ function Gallery(props) {
                   font-size="8vw"
                   visibility="hidden"
                 >
-                  {props.title1}
+                  {translate("interior", null, { locale: locale })}
                 </text>
               </svg>
             </Scene>
@@ -51,15 +75,9 @@ function Gallery(props) {
               classToggle="text-line"
               triggerElement="#trigger2"
               duration="0"
-              triggerHook="0.8"
+              triggerHook="0.9"
             >
-              <svg
-                height="16vw"
-                width="60vw"
-                stroke="#000000"
-                stroke-width="1"
-                class="text-line"
-              >
+              <svg height="16vw" width="60vw" stroke="#000000" stroke-width="1">
                 <text
                   font-family="Metropolis"
                   font-style="black"
@@ -69,7 +87,7 @@ function Gallery(props) {
                   font-size="8vw"
                   visibility="hidden"
                 >
-                  {props.title2}
+                  {translate("exterior", null, { locale: locale })}
                 </text>
               </svg>
             </Scene>
@@ -93,7 +111,7 @@ function Gallery(props) {
               classToggle="text-line"
               triggerElement="#trigger3"
               duration="0"
-              triggerHook="0.8"
+              triggerHook="0.9"
             >
               <svg height="16vw" width="60vw" stroke="#000000" stroke-width="1">
                 <text
@@ -105,7 +123,7 @@ function Gallery(props) {
                   font-size="8vw"
                   visibility="hidden"
                 >
-                  {props.title3}
+                  {translate("product", null, { locale: locale })}
                 </text>
               </svg>
             </Scene>
