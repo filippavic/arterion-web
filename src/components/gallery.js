@@ -53,41 +53,44 @@ function Gallery(props) {
 
   var locale = getLocale()
 
-  var defaultOptions1 = {
-    loop: false,
-    autoplay: false,
-    animationData:
-      locale.localeCompare("hr") === 0
-        ? interiorAnimationDataHR.default
-        : interiorAnimationDataEN.default,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
+  if (typeof locale !== "undefined"){
+    var defaultOptions1 = {
+      loop: false,
+      autoplay: false,
+      animationData:
+        locale.localeCompare("hr") === 0
+          ? interiorAnimationDataHR.default
+          : interiorAnimationDataEN.default,
+      rendererSettings: {
+        preserveAspectRatio: "xMidYMid slice",
+      }  
+    }
+
+    var defaultOptions2 = {
+      loop: false,
+      autoplay: false,
+      animationData:
+        locale.localeCompare("hr") === 0
+          ? exteriorAnimationDataHR.default
+          : exteriorAnimationDataEN.default,
+      rendererSettings: {
+        preserveAspectRatio: "xMidYMid slice",
+      }
+    }
+
+    var defaultOptions3 = {
+      loop: false,
+      autoplay: false,
+      animationData:
+        locale.localeCompare("hr") === 0
+          ? productAnimationDataHR.default
+          : productAnimationDataEN.default,
+      rendererSettings: {
+        preserveAspectRatio: "xMidYMid slice",
+      }
+    }
   }
 
-  var defaultOptions2 = {
-    loop: false,
-    autoplay: false,
-    animationData:
-      locale.localeCompare("hr") === 0
-        ? exteriorAnimationDataHR.default
-        : exteriorAnimationDataEN.default,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  }
-
-  var defaultOptions3 = {
-    loop: false,
-    autoplay: false,
-    animationData:
-      locale.localeCompare("hr") === 0
-        ? productAnimationDataHR.default
-        : productAnimationDataEN.default,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  }
 
   return (
     <div className="gallery">

@@ -38,15 +38,17 @@ const Contact = () => {
 
 
     //Lottie options
-    var defaultOptions = {
-        loop: false,
-        autoplay: false, 
-        animationData: (locale.localeCompare("hr") === 0) ? contactAnimationDataHR.default : contactAnimationDataEN.default,
-        rendererSettings: {
-        preserveAspectRatio: 'xMidYMid slice'
-      }
+    if (typeof locale !== "undefined"){
+        var defaultOptions = {
+            loop: false,
+            autoplay: false, 
+            animationData: (locale.localeCompare("hr") === 0) ? contactAnimationDataHR.default : contactAnimationDataEN.default,
+            rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice'
+          }
+        }
     }
-
+   
     return (
         <div className="contact-cont">
                 

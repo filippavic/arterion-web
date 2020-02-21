@@ -5,16 +5,7 @@ import * as animationData from '../images/arterion_sketch_white.json'
 
 const Landing = () => {
 
-    //Lottie options
-    var defaultOptions = {
-        loop: false,
-        autoplay: true, 
-        animationData: animationData.default,
-        rendererSettings: {
-        preserveAspectRatio: 'xMidYMid slice'
-      }
-    }
-
+    
     //localization
     function getLocale() {
         var lang = "";
@@ -31,6 +22,19 @@ const Landing = () => {
     
     translate.add({title1: '3D vizualizacije', title2: 'interijera, eksterijera i proizvoda'}, 'hr');
     translate.add({title1: '3D visualizations:', title2: 'interior, exterior and products'}, 'en');
+
+    //Lottie options
+    if (typeof locale !== "undefined"){
+        var defaultOptions = {
+            loop: false,
+            autoplay: true, 
+            animationData: animationData.default,
+            rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice'
+          }
+        }
+    }
+    
 
     return (
         <div className="landing">
