@@ -24,19 +24,15 @@ const IndexPage = () => (
       {/* <Header /> */}
       <Landing />
       <Gallery
-        title="INTERIJER"
-        imagetop={require("../images/interior_1.jpg")}
-        imagebottom={require("../images/interior_2.jpg")}
-      />
-      <Gallery
-        title="EKSTERIJER"
-        imagetop={require("../images/exterior_1.jpg")}
-        imagebottom={require("../images/exterior_2.jpg")}
-      />
-      <Gallery
-        title="PROIZVODI"
-        imagetop={require("../images/product_2.jpg")}
-        imagebottom={require("../images/product_1.jpg")}
+        title1="INTERIJER"
+        imagetop1={require("../images/interior_1.jpg")}
+        imagebottom1={require("../images/interior_2.jpg")}
+        title2="EKSTERIJER"
+        imagetop2={require("../images/exterior_1.jpg")}
+        imagebottom2={require("../images/exterior_2.jpg")}
+        title3="PROIZVODI"
+        imagetop3={require("../images/product_2.jpg")}
+        imagebottom3={require("../images/product_1.jpg")}
       />
     </div>
   </main>

@@ -1,6 +1,7 @@
 .text-line text {
-  stroke-dasharray: 600;
-  stroke-dashoffset: 600;
+  visibility: visible;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
   animation: dash 2s forwards;
 }
 
@@ -8,6 +9,10 @@
   to {
     stroke-dashoffset: 0;
   }
+}
+
+.gallery {
+  margin-top: 50px;
 }
 
 .galleryContainer {
@@ -60,4 +65,15 @@
 .leftBottomGallery {
   float: right;
   width: 60%;
+}
+
+.grayscale {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.grayscale:hover {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
 }
