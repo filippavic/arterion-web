@@ -1,4 +1,4 @@
-$accent-color: #3DC3F3;
+$accent-color: #00B8EA;
 $grey: #ecedf3;
 $grey-darker: #646464;
 $black: #080808;
@@ -58,12 +58,12 @@ body {
 }
 
 ::selection {
-    background: white;
+    background: $accent-color;
     color: $black;
 }
 
 ::-moz-selection {
-    background: white;
+    background: $accent-color;
     color: $black;
 }
 
@@ -190,10 +190,6 @@ header{
           font-size: 20px;
           font-weight: 700;
 
-          &:hover{
-              color: $black-light;
-              transition: 0.3s $ease-in-out-cubic;
-          }
       }
 
       h3{
@@ -205,7 +201,8 @@ header{
       text-align: center;
       font-size: 16px;
       align-items: center;
-      display: grid;
+      display: flex;
+      flex-direction: column;
 
       a {
           text-decoration: none;
@@ -214,6 +211,46 @@ header{
           font-weight: 600;
           transition: 0.5s $ease-in-out-cubic;
           margin-bottom: 20px;
+          position: relative;
+
+          &:before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            left: 0;
+            bottom: 0;
+            visibility: hidden;  
+            transition: width 0.5s ease, background .5s ease;
+          
+          }
+          &:hover{
+            color: $black;
+            transition: 0.5s color $ease-in-out-cubic;
+          }
+          &:hover:before{
+            visibility: visible;
+            background: $black;
+            width: 100%;
+          } 
+          
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: $black;
+            transition: width 0.5s ease;
+          }
+
+          &:hover:after {
+            background: transparent;
+            width: 100%;
+            transition: all 0s ease;
+          }
       }
 
       &.is-open {
@@ -440,6 +477,7 @@ header{
       text-align: center;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
 
       a{
         text-decoration: none;
@@ -447,11 +485,47 @@ header{
         font-size: calc(12px + (19 - 12) * ((100vw - 300px) / (1600 - 300)));
         color: #fff;
         margin-bottom: 20px;
+        position: relative;
+        width: fit-content;
 
-        &:hover{
-          color: $accent-color;
-          transition: 0.5s color $ease-in-out-cubic;
-        }
+        &:before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            left: 0;
+            bottom: 0;
+            visibility: hidden;  
+            transition: width 0.5s ease, background .5s ease;
+          
+          }
+          &:hover{
+            color: $accent-color;
+            transition: 0.5s color $ease-in-out-cubic;
+          }
+          &:hover:before{
+            visibility: visible;
+            background: $accent-color;
+            width: 100%;
+          } 
+          
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background: $accent-color;
+            transition: width 0.5s ease;
+          }
+
+          &:hover:after {
+            background: transparent;
+            width: 100%;
+            transition: all 0s ease;
+          }
       }
     }
 
