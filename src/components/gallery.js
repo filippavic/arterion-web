@@ -3,6 +3,7 @@ import React, { useState } from "react"
 // import Img from "gatsby-image"
 import Lottie from "react-lottie"
 import ScrollTrigger from "react-scroll-trigger"
+import Zoom from 'react-medium-image-zoom'
 import * as interiorAnimationDataHR from "../images/interior_hr.json"
 import * as interiorAnimationDataEN from "../images/interior_en.json"
 import * as exteriorAnimationDataHR from "../images/exterior_hr.json"
@@ -11,6 +12,7 @@ import * as productAnimationDataHR from "../images/products_hr.json"
 import * as productAnimationDataEN from "../images/products_en.json"
 
 import "./gallery.scss"
+import 'react-medium-image-zoom/dist/styles.css'
 
 function Gallery(props) {
   //Lotie toggle
@@ -92,6 +94,7 @@ function Gallery(props) {
   }
 
 
+
   return (
     <div className="gallery">
       <div className="galleryContainer">
@@ -111,7 +114,7 @@ function Gallery(props) {
         </div>
         <div className="leftTopGallery"></div>
         <div className="rightTopGallery">
-          <img src={props.imagetop1} className="grayscale" />
+          <Zoom overlayBgColorEnd="rgba(0,0,0,0.9)" overlayBgColorStart="rgba(0,0,0,0)"><img src={props.imagetop1} className="grayscale"/></Zoom>
         </div>
       </div>
       <div className="bottomGalleryContainer">
