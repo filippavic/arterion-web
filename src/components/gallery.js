@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+// import { useStaticQuery, graphql } from "gatsby"
+// import Img from "gatsby-image"
 import Lottie from "react-lottie"
 import ScrollTrigger from "react-scroll-trigger"
 import * as interiorAnimationDataHR from "../images/interior_hr.json"
@@ -14,16 +14,30 @@ import "./gallery.scss"
 
 function Gallery(props) {
   //Lotie toggle
-  const [isStopped, setStopped] = useState(true)
+  const [isStopped1, setStopped1] = useState(true)
+  const [isStopped2, setStopped2] = useState(true)
+  const [isStopped3, setStopped3] = useState(true)
 
   //scroll trigger
-  const onEnterViewport = () => {
-    setStopped(false)
+  const onEnterViewport1 = () => {
+    setStopped1(false)
+  }
+  const onEnterViewport2 = () => {
+    setStopped2(false)
+  }
+  const onEnterViewport3 = () => {
+    setStopped3(false)
   }
 
-  const onExitViewport = () => {
-    setStopped(true)
-  }
+  // const onExitViewport1 = () => {
+  //   setStopped1(true)
+  // }
+  // const onExitViewport2 = () => {
+  //   setStopped2(true)
+  // }
+  // const onExitViewport3 = () => {
+  //   setStopped3(true)
+  // }
 
   //localization
   function getLocale() {
@@ -80,13 +94,13 @@ function Gallery(props) {
       <div className="galleryContainer">
         <div className="titleGallery" id="trigger1">
           <ScrollTrigger
-            onEnter={() => onEnterViewport()}
-            onExit={() => onExitViewport()}
+            onEnter={() => onEnterViewport1()}
+            // onExit={() => onExitViewport1()}
           />
 
           <Lottie
             options={defaultOptions1}
-            isStopped={isStopped}
+            isStopped={isStopped1}
             isClickToPauseDisabled={true}
             className="interior-animation"
             id="interior-animation"
@@ -106,13 +120,13 @@ function Gallery(props) {
       <div className="galleryContainer">
         <div className="titleGallery" id="trigger2">
           <ScrollTrigger
-            onEnter={() => onEnterViewport()}
-            onExit={() => onExitViewport()}
+            onEnter={() => onEnterViewport2()}
+            // onExit={() => onExitViewport2()}
           />
 
           <Lottie
             options={defaultOptions2}
-            isStopped={isStopped}
+            isStopped={isStopped2}
             isClickToPauseDisabled={true}
             className="interior-animation"
             id="interior-animation"
@@ -132,13 +146,13 @@ function Gallery(props) {
       <div className="galleryContainer">
         <div className="titleGallery" id="trigger3">
           <ScrollTrigger
-            onEnter={() => onEnterViewport()}
-            onExit={() => onExitViewport()}
+            onEnter={() => onEnterViewport3()}
+            // onExit={() => onExitViewport3()}
           />
 
           <Lottie
             options={defaultOptions3}
-            isStopped={isStopped}
+            isStopped={isStopped3}
             isClickToPauseDisabled={true}
             className="product-animation"
             id="product-animation"
