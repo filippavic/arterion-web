@@ -1,16 +1,47 @@
-import React from "react"
-import { Helmet } from "react-helmet"
+import React, { useEffect } from "react"
+import Helmet from 'react-helmet'
+import gsap from "gsap"
 
 //import Image from "../components/image"
 //import SEO from "../components/seo"
 import Header from "../components/header"
 import Landing from "../components/landing"
+import Contact from "../components/contact"
 import Gallery from "../components/gallery"
 
 import "../styles/styles.scss"
 
-const IndexPage = () => (
-  <main>
+function IndexPage() {
+
+  useEffect(() => {
+    //gsap timeline
+    const tl = gsap.timeline();
+
+    tl.from(".landing-text", 2, {
+      display: 'none',
+      opacity: 0,
+      y: 50,
+      ease: "power4.out",
+      skewY: 2,
+      stagger: {amount: 0.3}
+    }).from(".header-menu, .logo", 1.5, {
+      display: 'none',
+      opacity: 0,
+      y: 10,
+      ease: "power4.out",
+      stagger: {amount: 0.3}
+    }).from(".icon-scroll", 4, {
+      display: 'none',
+      opacity: 0,
+      y: -10,
+      ease: "power4.out"
+    })
+
+}, []);
+
+
+  return (
+    <main>
     <Helmet>
       <html lang="hr" />
       <title>ARTERION obrt za dizajn</title>
@@ -21,7 +52,7 @@ const IndexPage = () => (
     </Helmet>
 
     <div>
-      {/* <Header /> */}
+      <Header />
       <Landing />
       <Gallery
         title1="INTERIJER"
@@ -34,8 +65,11 @@ const IndexPage = () => (
         imagetop3={require("../images/product_2.jpg")}
         imagebottom3={require("../images/product_1.jpg")}
       />
+      <Contact>
     </div>
   </main>
-)
+  );
+}
+
 
 export default IndexPage
