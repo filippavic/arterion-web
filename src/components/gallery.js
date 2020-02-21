@@ -1,12 +1,30 @@
-import React from "react"
+import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import { Controller, Scene } from "react-scrollmagic"
-import translate from "translate-js"
+import Lottie from "react-lottie"
+import ScrollTrigger from "react-scroll-trigger"
+import * as interiorAnimationDataHR from "../images/interior_hr.json"
+import * as interiorAnimationDataEN from "../images/interior_hr.json"
+import * as exteriorAnimationDataHR from "../images/exterior_hr.json"
+import * as exteriorAnimationDataEN from "../images/exterior_hr.json"
+import * as productAnimationDataHR from "../images/products_hr.json"
+import * as productAnimationDataEN from "../images/products_hr.json"
 
 import "./gallery.scss"
 
 function Gallery(props) {
+  //Lotie toggle
+  const [isStopped, setStopped] = useState(true)
+
+  //scroll trigger
+  const onEnterViewport = () => {
+    setStopped(false)
+  }
+
+  const onExitViewport = () => {
+    setStopped(true)
+  }
+
   //localization
   function getLocale() {
     var lang = ""
@@ -21,41 +39,58 @@ function Gallery(props) {
 
   var locale = getLocale()
 
-  translate.add({ interior: "INTERIJER" }, "hr")
-  translate.add({ interior: "INTERIOR" }, "en")
+  var defaultOptions1 = {
+    loop: false,
+    autoplay: false,
+    animationData:
+      locale.localeCompare("hr") === 0
+        ? interiorAnimationDataHR.default
+        : interiorAnimationDataEN.default,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  }
 
-  translate.add({ exterior: "EKSTERIJER" }, "hr")
-  translate.add({ exterior: "EXTERIOR" }, "en")
+  var defaultOptions2 = {
+    loop: false,
+    autoplay: false,
+    animationData:
+      locale.localeCompare("hr") === 0
+        ? exteriorAnimationDataHR.default
+        : exteriorAnimationDataEN.default,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  }
 
-  translate.add({ product: "PROIZVODI" }, "hr")
-  translate.add({ product: "PRODUCTS" }, "en")
+  var defaultOptions3 = {
+    loop: false,
+    autoplay: false,
+    animationData:
+      locale.localeCompare("hr") === 0
+        ? productAnimationDataHR.default
+        : productAnimationDataEN.default,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  }
 
   return (
     <div className="gallery">
       <div className="galleryContainer">
         <div className="titleGallery" id="trigger1">
-          <Controller>
-            <Scene
-              classToggle="text-line"
-              triggerElement="#trigger1"
-              duration="0"
-              triggerHook="0.9"
-            >
-              <svg height="16vw" width="60vw" stroke="#000000" stroke-width="1">
-                <text
-                  font-family="Metropolis"
-                  font-style="black"
-                  x="3vh"
-                  y="8vw"
-                  fill="none"
-                  font-size="8vw"
-                  visibility="hidden"
-                >
-                  {translate("interior", null, { locale: locale })}
-                </text>
-              </svg>
-            </Scene>
-          </Controller>
+          <ScrollTrigger
+            onEnter={() => onEnterViewport()}
+            onExit={() => onExitViewport()}
+          />
+
+          <Lottie
+            options={defaultOptions1}
+            isStopped={isStopped}
+            isClickToPauseDisabled={true}
+            className="interior-animation"
+            id="interior-animation"
+          />
         </div>
         <div className="leftTopGallery"></div>
         <div className="rightTopGallery">
@@ -70,28 +105,18 @@ function Gallery(props) {
       </div>
       <div className="galleryContainer">
         <div className="titleGallery" id="trigger2">
-          <Controller>
-            <Scene
-              classToggle="text-line"
-              triggerElement="#trigger2"
-              duration="0"
-              triggerHook="0.9"
-            >
-              <svg height="16vw" width="60vw" stroke="#000000" stroke-width="1">
-                <text
-                  font-family="Metropolis"
-                  font-style="black"
-                  x="3vh"
-                  y="8vw"
-                  fill="none"
-                  font-size="8vw"
-                  visibility="hidden"
-                >
-                  {translate("exterior", null, { locale: locale })}
-                </text>
-              </svg>
-            </Scene>
-          </Controller>
+          <ScrollTrigger
+            onEnter={() => onEnterViewport()}
+            onExit={() => onExitViewport()}
+          />
+
+          <Lottie
+            options={defaultOptions2}
+            isStopped={isStopped}
+            isClickToPauseDisabled={true}
+            className="interior-animation"
+            id="interior-animation"
+          />
         </div>
         <div className="leftTopGallery"></div>
         <div className="rightTopGallery">
@@ -106,28 +131,18 @@ function Gallery(props) {
       </div>
       <div className="galleryContainer">
         <div className="titleGallery" id="trigger3">
-          <Controller>
-            <Scene
-              classToggle="text-line"
-              triggerElement="#trigger3"
-              duration="0"
-              triggerHook="0.9"
-            >
-              <svg height="16vw" width="60vw" stroke="#000000" stroke-width="1">
-                <text
-                  font-family="Metropolis"
-                  font-style="black"
-                  x="3vh"
-                  y="8vw"
-                  fill="none"
-                  font-size="8vw"
-                  visibility="hidden"
-                >
-                  {translate("product", null, { locale: locale })}
-                </text>
-              </svg>
-            </Scene>
-          </Controller>
+          <ScrollTrigger
+            onEnter={() => onEnterViewport()}
+            onExit={() => onExitViewport()}
+          />
+
+          <Lottie
+            options={defaultOptions3}
+            isStopped={isStopped}
+            isClickToPauseDisabled={true}
+            className="product-animation"
+            id="product-animation"
+          />
         </div>
         <div className="leftTopGallery"></div>
         <div className="rightTopGallery">
