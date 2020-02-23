@@ -22,25 +22,35 @@ function IndexPage() {
     //gsap timeline
     const tl = gsap.timeline()
 
-    tl.from(".landing-text", 2, {
-      display: "none",
-      opacity: 0,
+    tl.set(".landing-text", {
+      autoAlpha: 0,
       y: 50,
+      skewY: 2
+    })
+    .set(".header-menu, .logo", {
+      autoAlpha: 0,
+      y: 10
+    })
+    .set(".icon-scroll", {
+      autoAlpha: 0,
+      y: -10
+    })  
+    .to(".landing-text", 2, {
+      autoAlpha: 1,
+      y: 0,
       ease: "power4.out",
-      skewY: 2,
+      skewY: 0,
       stagger: { amount: 0.3 },
     })
-      .from(".header-menu, .logo", 1.5, {
-        display: "none",
-        opacity: 0,
-        y: 10,
+      .to(".header-menu, .logo", 1.5, {
+        autoAlpha: 1,
+        y: 0,
         ease: "power4.out",
         stagger: { amount: 0.3 },
       })
-      .from(".icon-scroll", 4, {
-        display: "none",
-        opacity: 0,
-        y: -10,
+      .to(".icon-scroll", 4, {
+        autoAlpha: 1,
+        y: 0,
         ease: "power4.out",
       })
   }, [])
