@@ -3,7 +3,7 @@ import React, { useState } from "react"
 // import Img from "gatsby-image"
 import Lottie from "react-lottie"
 import ScrollTrigger from "react-scroll-trigger"
-import i18n from 'i18next';
+import i18n from "i18next"
 import * as interiorAnimationDataHR from "../images/interior_hr.json"
 import * as interiorAnimationDataEN from "../images/interior_en.json"
 import * as exteriorAnimationDataHR from "../images/exterior_hr.json"
@@ -31,7 +31,7 @@ function Gallery(props) {
   }
 
   const onExitViewport1 = () => {
-     setStopped1(true)
+    setStopped1(true)
   }
   const onExitViewport2 = () => {
     setStopped2(true)
@@ -42,14 +42,16 @@ function Gallery(props) {
 
   //get locale
   const getLanguage = () => {
-    return i18n.language ||
-      (typeof window !== 'undefined' && window.localStorage.i18nextLng) ||
-      'en';
-  };
+    return (
+      i18n.language ||
+      (typeof window !== "undefined" && window.localStorage.i18nextLng) ||
+      "en"
+    )
+  }
 
-  var locale = (String(getLanguage())).substring(0,2);
+  var locale = String(getLanguage()).substring(0, 2)
 
-  if (typeof locale !== "undefined"){
+  if (typeof locale !== "undefined") {
     var defaultOptions1 = {
       loop: false,
       autoplay: false,
@@ -59,7 +61,7 @@ function Gallery(props) {
           : interiorAnimationDataEN.default,
       rendererSettings: {
         preserveAspectRatio: "xMidYMid slice",
-      }  
+      },
     }
 
     var defaultOptions2 = {
@@ -71,7 +73,7 @@ function Gallery(props) {
           : exteriorAnimationDataEN.default,
       rendererSettings: {
         preserveAspectRatio: "xMidYMid slice",
-      }
+      },
     }
 
     var defaultOptions3 = {
@@ -83,21 +85,18 @@ function Gallery(props) {
           : productAnimationDataEN.default,
       rendererSettings: {
         preserveAspectRatio: "xMidYMid slice",
-      }
+      },
     }
   }
-
-
 
   return (
     <div className="gallery">
       <div className="galleryContainer">
         <ScrollTrigger
-            onEnter={() => onEnterViewport1()}
-            onExit={() => onExitViewport1()}
+          onEnter={() => onEnterViewport1()}
+          onExit={() => onExitViewport1()}
         >
           <div className="titleGallery" id="trigger1">
-
             <Lottie
               options={defaultOptions1}
               isStopped={isStopped1}
@@ -108,16 +107,22 @@ function Gallery(props) {
             />
           </div>
         </ScrollTrigger>
-        <div className="leftTopGallery">
-        
-        </div>
+        <div className="leftTopGallery"></div>
         <div className="rightTopGallery">
-          <img src={props.imagetop1} className="grayscale" alt="Interior visualization"/>
+          <img
+            src={props.imagetop1}
+            className="image"
+            alt="Interior visualization"
+          />
         </div>
       </div>
       <div className="bottomGalleryContainer">
         <div className="leftBottomGallery">
-          <img src={props.imagebottom1} className="grayscale" alt="Interior visualization"/>
+          <img
+            src={props.imagebottom1}
+            className="image"
+            alt="Interior visualization"
+          />
         </div>
         <div className="rightBottomGallery"></div>
       </div>
@@ -127,7 +132,6 @@ function Gallery(props) {
             onEnter={() => onEnterViewport2()}
             onExit={() => onExitViewport2()}
           >
-
             <Lottie
               options={defaultOptions2}
               isStopped={isStopped2}
@@ -140,12 +144,20 @@ function Gallery(props) {
         </div>
         <div className="leftTopGallery"></div>
         <div className="rightTopGallery">
-          <img src={props.imagetop2} className="grayscale" alt="Exterior visualization"/>
+          <img
+            src={props.imagetop2}
+            className="image"
+            alt="Exterior visualization"
+          />
         </div>
       </div>
       <div className="bottomGalleryContainer">
         <div className="leftBottomGallery">
-          <img src={props.imagebottom2} className="grayscale" alt="Exterior visualization"/>
+          <img
+            src={props.imagebottom2}
+            className="image"
+            alt="Exterior visualization"
+          />
         </div>
         <div className="rightBottomGallery"></div>
       </div>
@@ -167,12 +179,20 @@ function Gallery(props) {
         </div>
         <div className="leftTopGallery"></div>
         <div className="rightTopGallery">
-          <img src={props.imagetop3} className="grayscale" alt="Product visualization"/>
+          <img
+            src={props.imagetop3}
+            className="image"
+            alt="Product visualization"
+          />
         </div>
       </div>
       <div className="bottomGalleryContainer">
         <div className="leftBottomGallery">
-          <img src={props.imagebottom3} className="grayscale" alt="Product visualization"/>
+          <img
+            src={props.imagebottom3}
+            className="image"
+            alt="Product visualization"
+          />
         </div>
         <div className="rightBottomGallery"></div>
       </div>
