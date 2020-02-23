@@ -100,7 +100,7 @@ header{
                 text-decoration: none;
                 font-weight: bold;
                 letter-spacing: 1.5px;
-                color: #fff;
+                color: $accent-color;
             }
         }
 
@@ -110,7 +110,7 @@ header{
                 text-decoration: none;
                 font-weight: bold;
                 letter-spacing: 1.5px;
-                color: #fff;
+                color: $accent-color;
                 cursor: pointer;
 
                 &:before {
@@ -191,7 +191,9 @@ header{
           cursor: pointer;
           font-size: 20px;
           font-weight: 700;
-
+          &:focus{
+            outline: none !important;
+          }
       }
 
       h3{

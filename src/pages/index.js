@@ -67,14 +67,7 @@ function IndexPage() {
       <div>
         <Header />
         <Landing />
-        <Gallery
-          imagetop1={require("../images/interior_1.jpg")}
-          imagebottom1={require("../images/interior_2.jpg")}
-          imagetop2={require("../images/exterior_1.jpg")}
-          imagebottom2={require("../images/exterior_2.jpg")}
-          imagetop3={require("../images/product_2.jpg")}
-          imagebottom3={require("../images/product_1.jpg")}
-        />
+        <Gallery />
         <Contact />
       </div>
     </main>

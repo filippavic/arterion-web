@@ -1,6 +1,5 @@
 import React, { useState } from "react"
-// import { useStaticQuery, graphql } from "gatsby"
-// import Img from "gatsby-image"
+import Image from '../components/Image';
 import Lottie from "react-lottie"
 import ScrollTrigger from "react-scroll-trigger"
 import i18n from 'i18next';
@@ -13,7 +12,8 @@ import * as productAnimationDataEN from "../images/products_en.json"
 
 import "./gallery.scss"
 
-function Gallery(props) {
+function Gallery() {
+
   //Lotie toggle
   const [isStopped1, setStopped1] = useState(true)
   const [isStopped2, setStopped2] = useState(true)
@@ -112,12 +112,12 @@ function Gallery(props) {
         
         </div>
         <div className="rightTopGallery">
-          <img src={props.imagetop1} className="grayscale" alt="Interior visualization"/>
+          <Image alt="Interior visualization" filename="interior_1.jpg" />
         </div>
       </div>
       <div className="bottomGalleryContainer">
         <div className="leftBottomGallery">
-          <img src={props.imagebottom1} className="grayscale" alt="Interior visualization"/>
+          <Image alt="Interior visualization" filename="interior_2.jpg" />
         </div>
         <div className="rightBottomGallery"></div>
       </div>
@@ -140,12 +140,12 @@ function Gallery(props) {
         </div>
         <div className="leftTopGallery"></div>
         <div className="rightTopGallery">
-          <img src={props.imagetop2} className="grayscale" alt="Exterior visualization"/>
+          <Image alt="Exterior visualization" filename="exterior_1.jpg" />
         </div>
       </div>
       <div className="bottomGalleryContainer">
         <div className="leftBottomGallery">
-          <img src={props.imagebottom2} className="grayscale" alt="Exterior visualization"/>
+          <Image alt="Exterior visualization" filename="exterior_2.jpg" />
         </div>
         <div className="rightBottomGallery"></div>
       </div>
@@ -167,12 +167,12 @@ function Gallery(props) {
         </div>
         <div className="leftTopGallery"></div>
         <div className="rightTopGallery">
-          <img src={props.imagetop3} className="grayscale" alt="Product visualization"/>
+          <Image alt="Product visualization" filename="product_1.jpg" />
         </div>
       </div>
       <div className="bottomGalleryContainer">
         <div className="leftBottomGallery">
-          <img src={props.imagebottom3} className="grayscale" alt="Product visualization"/>
+          <Image alt="Product visualization" filename="product_2.jpg" />
         </div>
         <div className="rightBottomGallery"></div>
       </div>
