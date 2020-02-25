@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import Image from '../components/Image';
 import Lottie from "react-lottie"
 import ScrollTrigger from "react-scroll-trigger"
-import i18n from 'i18next';
 import * as interiorAnimationDataHR from "../images/interior_hr.json"
 import * as interiorAnimationDataEN from "../images/interior_en.json"
 import * as exteriorAnimationDataHR from "../images/exterior_hr.json"
@@ -40,14 +39,20 @@ function Gallery() {
     setStopped3(true)
   }
 
-  //get locale
-  const getLanguage = () => {
-    return i18n.language ||
-      (typeof window !== 'undefined' && window.localStorage.i18nextLng) ||
-      'en';
-  };
+  //localization
+  function getLocale() {
+    var lang = ""
+    if (typeof navigator !== "undefined") {
+      if (navigator.languages !== undefined) lang = navigator.languages[0]
+      else lang = navigator.language
 
-  var locale = (String(getLanguage())).substring(0,2);
+      if (lang.substring(0, 2).localeCompare("hr") !== 0) return "en"
+      else return "hr"
+    }
+  }
+
+  var locale = getLocale()
+
 
   if (typeof locale !== "undefined"){
     var defaultOptions1 = {

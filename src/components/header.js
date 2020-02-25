@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react"
 import gsap from "gsap"
-import { useTranslation } from "react-i18next"
+import translate from "translate-js"
 
 function Header() {
 
   //gsap timeline
   const [menutl] = useState(gsap.timeline({paused: true}));
 
-  //react-i18next translation
-  const { t } = useTranslation();
 
   useEffect(() => {
         
@@ -65,6 +63,23 @@ function Header() {
       }
    });
   }
+
+  //localization
+  function getLocale() {
+    var lang = "";
+    if (typeof navigator !== "undefined"){
+      if (navigator.languages !== undefined) lang = navigator.languages[0]; 
+      else lang = navigator.language;
+
+      if (lang.substring(0,2).localeCompare("hr") !== 0) return "en"
+      else return "hr"
+    }
+  }
+
+  var locale = getLocale();
+
+  translate.add({contact: 'KONTAKT', country: 'Hrvatska', owner: 'vl. Siniša Slovenec'}, 'hr');
+  translate.add({contact: 'CONTACT', country: 'Croatia', owner: 'owner: Siniša Slovenec'}, 'en');
   
  
   return(
@@ -77,7 +92,7 @@ function Header() {
             </div>
 
             <div className="header-menu">
-              <a role="button" tabIndex={0} className="contact-animate" id="contact-button" onClick={() => openCloseMenu()}>{t("contact")}</a>
+              <a role="button" tabIndex={0} className="contact-animate" id="contact-button" onClick={() => openCloseMenu()}>{translate('contact', null, {locale: locale})}</a>
             </div>
           </div>
         </div>
@@ -86,7 +101,7 @@ function Header() {
       <div className={isMenuOpen ? "menu-cont is-open" : "menu-cont"} id='menu'>
         <div className="menu-info">
             <a role="button" tabIndex={0} className="close-button" onClick={() => openCloseMenu()}>x</a>
-            <h3>{t("contact")}</h3>
+            <h3>{translate('contact', null, {locale: locale})}</h3>
         </div>
 
         <div className="contact-info">
@@ -95,9 +110,9 @@ function Header() {
         </div>
 
         <div className="company-info">
-            <h3>{t("owner")}</h3>
+            <h3>{translate('owner', null, {locale: locale})}</h3>
             <h3>Jalšje 22, Veliko Trgovišće</h3>
-            <h3>{t("country")}</h3>
+            <h3>{translate('country', null, {locale: locale})}</h3>
         </div>
       </div>
     </div>

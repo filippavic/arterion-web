@@ -1,14 +1,30 @@
 import React from "react"
 import Lottie from 'react-lottie'
-import { useTranslation } from "react-i18next"
+import translate from "translate-js"
 import * as animationData from '../images/arterion_sketch_white.json'
 
 const Landing = () => {
 
-    //react-i18next translation
-    const { t } = useTranslation();
+    //localization
+    function getLocale() {
+        var lang = "";
+        if (typeof navigator !== "undefined"){
+          if (navigator.languages !== undefined) lang = navigator.languages[0]; 
+          else lang = navigator.language;
+    
+          if (lang.substring(0,2).localeCompare("hr") !== 0) return "en"
+          else return "hr"
+        }
+    }
+    
+    var locale = getLocale();
+    
+    translate.add({title1: '3D vizualizacije', title2: 'interijera, eksterijera i proizvoda'}, 'hr');
+    translate.add({title1: '3D visualizations:', title2: 'interior, exterior and products'}, 'en');
+
 
     //Lottie options
+    if (typeof locale !== "undefined"){
         var defaultOptions = {
             loop: false,
             autoplay: true, 
@@ -17,6 +33,7 @@ const Landing = () => {
             preserveAspectRatio: 'xMidYMid slice'
           }
         }
+    }
     
 
     return (
@@ -26,10 +43,10 @@ const Landing = () => {
                     <h1 id="landing-headline">ARTERION</h1>
                     <h2>
                         <div className="line">
-                            <span>{t("landingTitle1")}</span>
+                            <span>{translate('title1', null, {locale: locale})}</span>
                         </div>
                         <div className="line">
-                            <span>{t("landingTitle2")}</span>
+                            <span>{translate('title2', null, {locale: locale})}</span>
                         </div>
                     </h2>
                 </div>
