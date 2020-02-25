@@ -92,6 +92,79 @@ header {
     align-items: center;
     justify-content: space-between;
     height: 80px;
+    width: 80%;
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+
+    .inner-header{
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 80px;
+        .logo{
+            opacity: 0;
+            a {
+                text-decoration: none;
+                font-weight: bold;
+                letter-spacing: 1.5px;
+                color: $accent-color;
+            }
+        }
+
+        .header-menu{
+            opacity: 0;
+            a{
+                text-decoration: none;
+                font-weight: bold;
+                letter-spacing: 1.5px;
+                color: $accent-color;
+                cursor: pointer;
+
+                &:before {
+                  content: '';
+                  position: absolute;
+                  width: 0;
+                  height: 1px;
+                  left: 0;
+                  bottom: 0;
+                  visibility: hidden;  
+                  transition: width 0.5s ease, background .5s ease;
+                
+                }
+                &:hover{
+                  color: $accent-color;
+                  transition: 0.5s color $ease-in-out-cubic;
+                }
+                &:hover:before{
+                  visibility: visible;
+                  background: $accent-color;
+                  width: 100%;
+                } 
+                
+                &:after {
+                  content: '';
+                  display: block;
+                  position: absolute;
+                  right: 0;
+                  bottom: 0;
+                  width: 0;
+                  height: 1px;
+                  background: $accent-color;
+                  transition: width 0.5s ease;
+                }
+
+                &:hover:after {
+                  background: transparent;
+                  width: 100%;
+                  transition: all 0s ease;
+                }
+            }
     .logo {
       a {
         text-decoration: none;
@@ -176,23 +249,25 @@ header {
     color: black;
   }
 
-  .menu-info {
-    padding-top: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    a {
-      color: black;
-      cursor: pointer;
-      font-size: 20px;
-      font-weight: 700;
-    }
 
-    h3 {
+  .menu-info{
+      padding-top: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      a{
+          color: black;
+          cursor: pointer;
+          font-size: 20px;
+          font-weight: 700;
+          &:focus{
+            outline: none !important;
+          }
+    
+        h3 {
       color: black;
     }
-  }
-
+      }
   .contact-info {
     text-align: center;
     font-size: 16px;
@@ -285,12 +360,37 @@ header {
     position: relative;
     display: flex;
 
-    .landing-text {
-      position: absolute;
-      color: #fff;
-      margin-left: 10vw;
-      margin-top: calc(4vw + 6vh + 5vmin);
-      z-index: 2;
+
+        .landing-text{
+            opacity: 0;
+            position: absolute;
+            color: #fff;
+            margin-left: 10vw;
+            margin-top: calc(4vw + 6vh + 5vmin);
+            z-index: 2;
+
+            h1{
+                font-family: 'Manrope';
+                font-weight: bold;
+                font-size: calc(3vw + 4vh + 2vmin);
+            }
+
+            h2{
+                font-family: 'Manrope';
+                font-size: calc(1vw + 1vh + 1vmin);
+                font-weight: lighter !important;
+
+                span{
+                    display: inline-block;
+                }
+            }
+
+            @media (max-width: 600px){
+                margin-top: calc(5vw + 7vh + 10vmin);
+            }
+        }
+
+
 
       h1 {
         font-family: "Manrope";
@@ -322,6 +422,7 @@ header {
       }
     }
   }
+
 
   .icon-scroll,
   .icon-scroll:before {

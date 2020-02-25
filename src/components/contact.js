@@ -1,8 +1,7 @@
 import React, { useState } from "react"
 import Lottie from 'react-lottie'
 import ScrollTrigger from 'react-scroll-trigger';
-import { useTranslation } from "react-i18next"
-import i18n from 'i18next';
+import translate from "translate-js"
 import * as contactAnimationDataHR from '../images/contact_hr.json'
 import * as contactAnimationDataEN from '../images/contact_en.json'
 
@@ -11,17 +10,23 @@ const Contact = () => {
     //Lotie toggle
     const [isStopped, setStopped] = useState(true);
 
-    //react-i18next translation
-    const { t } = useTranslation();
+    //localization
+    function getLocale() {
+        var lang = "";
+        if (typeof navigator !== "undefined"){
+          if (navigator.languages !== undefined) lang = navigator.languages[0]; 
+          else lang = navigator.language;
+    
+          if (lang.substring(0,2).localeCompare("hr") !== 0) return "en"
+          else return "hr"
+        }
+    }
+    
+    var locale = getLocale();
 
-    //get locale
-    const getLanguage = () => {
-        return i18n.language ||
-          (typeof window !== 'undefined' && window.localStorage.i18nextLng) ||
-          'en';
-    };
+    translate.add({country: 'Hrvatska', owner: 'vl. Siniša Slovenec'}, 'hr');
+    translate.add({country: 'Croatia', owner: 'owner: Siniša Slovenec'}, 'en');
 
-    var locale = (String(getLanguage())).substring(0,2);
 
     //scroll trigger
     const onEnterViewport = () => {
@@ -34,6 +39,7 @@ const Contact = () => {
 
 
     //Lottie options
+    if (typeof locale !=="undefined") {
         var defaultOptions = {
             loop: false,
             autoplay: false, 
@@ -45,6 +51,7 @@ const Contact = () => {
             preserveAspectRatio: 'xMidYMid slice'
           }
         }
+    }
    
     return (
         <div className="contact-cont">
@@ -67,9 +74,9 @@ const Contact = () => {
 
                 <div className="contact-right">
                     <h3 id="company-title">ARTERION obrt za dizajn</h3>
-                    <h3>{t("owner")}</h3>
+                    <h3>{translate('owner', null, {locale: locale})}</h3>
                     <h3>Jalšje 22, Veliko Trgovišće</h3>
-                    <h3>{t("country")}</h3>
+                    <h3>{translate('country', null, {locale: locale})}</h3>
                 </div>
             </div>
 
