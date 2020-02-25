@@ -22,6 +22,9 @@
   overflow: hidden;
   display: flex;
   margin-top: -30px;
+  @media only screen and (max-device-width: 768px) {
+    height: 40vh;
+  }
 }
 
 .titleGallery {
@@ -29,6 +32,9 @@
   z-index: 10;
   width: 60vw;
   mix-blend-mode: multiply;
+  @media only screen and (max-device-width: 768px) {
+    width: 90vw;
+  }
 }
 
 .leftTopGallery {
@@ -47,6 +53,9 @@
   overflow: hidden;
   display: flex;
   margin-top: -31px;
+  @media only screen and (max-device-width: 768px) {
+    height: 40vh;
+  }
 }
 
 .rightTopGallery {
@@ -68,13 +77,18 @@
   width: 60%;
 }
 
-.grayscale {
-  -webkit-filter: grayscale(70%);
-  filter: grayscale(70%);
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
+.image {
+  width: 100%;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  @media only screen and (max-device-width: 768px) {
+    height: 100%;
+    object-fit: cover;
+  }
 }
-.grayscale:hover {
+.image:hover {
   -webkit-filter: grayscale(0);
   filter: grayscale(0);
 }

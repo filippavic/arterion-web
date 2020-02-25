@@ -30,7 +30,7 @@ function Gallery() {
   }
 
   const onExitViewport1 = () => {
-     setStopped1(true)
+    setStopped1(true)
   }
   const onExitViewport2 = () => {
     setStopped2(true)
@@ -54,7 +54,7 @@ function Gallery() {
   var locale = getLocale()
 
 
-  if (typeof locale !== "undefined"){
+  if (typeof locale !== "undefined") {
     var defaultOptions1 = {
       loop: false,
       autoplay: false,
@@ -64,7 +64,7 @@ function Gallery() {
           : interiorAnimationDataEN.default,
       rendererSettings: {
         preserveAspectRatio: "xMidYMid slice",
-      }  
+      },
     }
 
     var defaultOptions2 = {
@@ -76,7 +76,7 @@ function Gallery() {
           : exteriorAnimationDataEN.default,
       rendererSettings: {
         preserveAspectRatio: "xMidYMid slice",
-      }
+      },
     }
 
     var defaultOptions3 = {
@@ -88,21 +88,18 @@ function Gallery() {
           : productAnimationDataEN.default,
       rendererSettings: {
         preserveAspectRatio: "xMidYMid slice",
-      }
+      },
     }
   }
-
-
 
   return (
     <div className="gallery">
       <div className="galleryContainer">
         <ScrollTrigger
-            onEnter={() => onEnterViewport1()}
-            onExit={() => onExitViewport1()}
+          onEnter={() => onEnterViewport1()}
+          onExit={() => onExitViewport1()}
         >
           <div className="titleGallery" id="trigger1">
-
             <Lottie
               options={defaultOptions1}
               isStopped={isStopped1}
@@ -113,9 +110,7 @@ function Gallery() {
             />
           </div>
         </ScrollTrigger>
-        <div className="leftTopGallery">
-        
-        </div>
+        <div className="leftTopGallery"></div>
         <div className="rightTopGallery">
           <Image alt="Interior visualization" filename="interior_1.jpg" />
         </div>
@@ -132,7 +127,6 @@ function Gallery() {
             onEnter={() => onEnterViewport2()}
             onExit={() => onExitViewport2()}
           >
-
             <Lottie
               options={defaultOptions2}
               isStopped={isStopped2}
