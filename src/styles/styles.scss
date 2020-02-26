@@ -85,7 +85,7 @@ header {
   margin-right: auto;
   left: 0;
   right: 0;
-  mix-blend-mode: difference;
+  // mix-blend-mode: difference;
 
   .inner-header {
     display: flex;
@@ -97,7 +97,7 @@ header {
         text-decoration: none;
         font-weight: bold;
         letter-spacing: 1.5px;
-        color: #fff;
+        color: #00b8ea;
       }
     }
 
@@ -106,7 +106,7 @@ header {
         text-decoration: none;
         font-weight: bold;
         letter-spacing: 1.5px;
-        color: #fff;
+        color: #00b8ea;
         cursor: pointer;
 
         &:before {
@@ -169,6 +169,45 @@ header {
 
   &.is-open {
     transform: translateX(0px);
+  }
+
+  .close-button {
+    $size: 25px;
+    height: $size;
+    width: $size;
+    position: relative;
+    box-sizing: border-box;
+    line-height: $size;
+    display: inline-block;
+
+    &:before,
+    &:after {
+      $width: 25px;
+      $height: 5px;
+      transform: rotate(-45deg);
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -$height / 2;
+      margin-left: -$width / 2;
+      display: block;
+      height: $height;
+      width: $width;
+      background-color: #000;
+      transition: all 0.2s ease-out;
+    }
+
+    &:after {
+      transform: rotate(45deg);
+    }
+
+    &:hover {
+      &:before,
+      &:after {
+        transform: rotate(0deg);
+      }
+    }
   }
 
   h3 {

@@ -31,7 +31,7 @@
   position: absolute;
   z-index: 10;
   width: 60vw;
-  mix-blend-mode: multiply;
+  mix-blend-mode: difference;
   @media only screen and (max-device-width: 768px) {
     width: 90vw;
   }
