@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import Image from '../components/Image';
+import Image from '../components/image';
 import Lottie from "react-lottie"
 import ScrollTrigger from "react-scroll-trigger"
 import * as interiorAnimationDataHR from "../images/interior_hr.json"
