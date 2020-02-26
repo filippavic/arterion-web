@@ -100,7 +100,7 @@ function Header() {
 
       <div className={isMenuOpen ? "menu-cont is-open" : "menu-cont"} id='menu'>
         <div className="menu-info">
-            <a role="button" tabIndex={0} className="close-button" onClick={() => openCloseMenu()}>x</a>
+            <a role="button" tabIndex={0} className="close-button" onClick={() => openCloseMenu()}></a>
             <h3>{translate('contact', null, {locale: locale})}</h3>
         </div>
 

@@ -85,7 +85,7 @@ header {
   margin-right: auto;
   left: 0;
   right: 0;
-  mix-blend-mode: difference;
+  // mix-blend-mode: difference;
 
   .inner-header {
     display: flex;
@@ -97,7 +97,7 @@ header {
         text-decoration: none;
         font-weight: bold;
         letter-spacing: 1.5px;
-        color: #fff;
+        color: #00b8ea;
       }
     }
 
@@ -106,7 +106,7 @@ header {
         text-decoration: none;
         font-weight: bold;
         letter-spacing: 1.5px;
-        color: #fff;
+        color: #00b8ea;
         cursor: pointer;
 
         &:before {
@@ -169,6 +169,45 @@ header {
 
   &.is-open {
     transform: translateX(0px);
+  }
+
+  .close-button {
+    $size: 25px;
+    height: $size;
+    width: $size;
+    position: relative;
+    box-sizing: border-box;
+    line-height: $size;
+    display: inline-block;
+
+    &:before,
+    &:after {
+      $width: 25px;
+      $height: 5px;
+      transform: rotate(-45deg);
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -$height / 2;
+      margin-left: -$width / 2;
+      display: block;
+      height: $height;
+      width: $width;
+      background-color: #000;
+      transition: all 0.2s ease-out;
+    }
+
+    &:after {
+      transform: rotate(45deg);
+    }
+
+    &:hover {
+      &:before,
+      &:after {
+        transform: rotate(0deg);
+      }
+    }
   }
 
   h3 {
@@ -428,20 +467,13 @@ header {
 //Contact
 
 .contact-cont {
-  height: 100vh;
-  min-height: 700px;
+  height: 45vh;
+  // min-height: 700px;
   background-color: $black;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   background-color: #000000;
-
-  .contact-bg {
-    position: absolute;
-    height: 100vh;
-    width: 40%;
-    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3C/g%3E%3C/svg%3E");
-  }
 
   .contact-top {
     flex-basis: 30%;
@@ -455,9 +487,25 @@ header {
         width: 80%;
       }
     }
+
+    h1,
+    h2 {
+      font-family: "Manrope";
+      color: white;
+    }
+
+    h1 {
+      font-size: calc(35px + (16 - 10) * ((100vw - 300px) / (1600 - 300)));
+    }
+
+    h2 {
+      font-size: calc(20px + (16 - 10) * ((100vw - 300px) / (1600 - 300)));
+      font-weight: 600;
+    }
   }
 
   .contact-middle {
+    padding-top: 20px;
     flex-basis: 33%;
     display: flex;
     flex-direction: row;
