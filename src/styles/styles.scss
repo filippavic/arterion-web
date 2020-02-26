@@ -467,20 +467,13 @@ header {
 //Contact
 
 .contact-cont {
-  height: 100vh;
-  min-height: 700px;
+  height: 45vh;
+  // min-height: 700px;
   background-color: $black;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   background-color: #000000;
-
-  .contact-bg {
-    position: absolute;
-    height: 100vh;
-    width: 40%;
-    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3C/g%3E%3C/svg%3E");
-  }
 
   .contact-top {
     flex-basis: 30%;
@@ -494,9 +487,25 @@ header {
         width: 80%;
       }
     }
+
+    h1,
+    h2 {
+      font-family: "Manrope";
+      color: white;
+    }
+
+    h1 {
+      font-size: calc(35px + (16 - 10) * ((100vw - 300px) / (1600 - 300)));
+    }
+
+    h2 {
+      font-size: calc(20px + (16 - 10) * ((100vw - 300px) / (1600 - 300)));
+      font-weight: 600;
+    }
   }
 
   .contact-middle {
+    padding-top: 20px;
     flex-basis: 33%;
     display: flex;
     flex-direction: row;

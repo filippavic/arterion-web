@@ -40,9 +40,10 @@
 .leftTopGallery {
   float: left;
   width: 40%;
-  background-image: radial-gradient(#e1e1e1 10%, #ffffff 10%);
-  background-position: 0 0;
-  background-size: 20px 20px;
+  // background-image: radial-gradient(#e1e1e1 10%, #ffffff 10%);
+  // background-position: 0 0;
+  // background-size: 20px 20px;
+  background-color: white;
   height: auto;
 }
 
@@ -59,22 +60,29 @@
 }
 
 .rightTopGallery {
+  padding-top: 7%;
+  padding-right: 7%;
   float: right;
   width: 60%;
+  background-color: white;
 }
 
 .rightBottomGallery {
   float: left;
   width: 40%;
-  background-image: radial-gradient(#e1e1e1 10%, #ffffff 10%);
-  background-position: 0 0;
-  background-size: 20px 20px;
+  background-color: white;
+  // background-image: radial-gradient(#e1e1e1 10%, #ffffff 10%);
+  // background-position: 0 0;
+  // background-size: 20px 20px;
   height: auto;
 }
 
 .leftBottomGallery {
+  padding-top: 7%;
+  padding-left: 7%;
   float: right;
   width: 60%;
+  background-color: white;
 }
 
 .image {
@@ -91,4 +99,11 @@
 .image:hover {
   -webkit-filter: grayscale(0);
   filter: grayscale(0);
+}
+
+h3 {
+  font-family: "Manrope";
+  font-size: calc(10px + (16 - 10) * ((100vw - 300px) / (1600 - 300)));
+  padding-top: 15px !important;
+  padding-bottom: 10px !important;
 }
