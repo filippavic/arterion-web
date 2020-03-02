@@ -2,9 +2,9 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-import "./gallery.scss"
+import "./landingImage.scss"
 
-const Image = props => (
+const LandingImage = props => (
 
   //dinamican Gatsby Image
 
@@ -35,9 +35,9 @@ const Image = props => (
         return null;
       }
 
-      return <Img className="image" alt={props.alt} fluid={image.node.childImageSharp.fluid} />;
+      return <Img className="landing-image" alt={props.alt} fluid={image.node.childImageSharp.fluid} />;
     }}
   />
 );
 
-export default Image;
+export default LandingImage;

@@ -1,9 +1,34 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Lottie from 'react-lottie'
 import translate from "translate-js"
-import * as animationData from '../images/arterion_sketch_white.json'
+import gsap from "gsap"
+import * as animationLeftData from '../images/arterion_sketch_left.json'
+import * as animationRightData from '../images/arterion_sketch_right.json'
 
 const Landing = () => {
+
+    /* useEffect(() => {
+        //gsap timeline
+        const ltl = gsap.timeline()
+    
+        ltl.set(".landing-image-left", {
+            autoAlpha: 0
+          })
+          .set(".landing-image-right", {
+            autoAlpha: 0
+          })
+          .to(".landing-image-left, .landing-image-right", {
+            autoAlpha: 1,
+            ease: "power2.easeInOut",
+            delay: 3,
+            duration: 7,
+            stagger: {amount: 0.3}
+          })
+          .to(".landing-animation-cont", {
+            autoAlpha: 0,
+            ease: "power4.out"
+          })
+      }, []) */
 
     //localization
     function getLocale() {
@@ -25,10 +50,19 @@ const Landing = () => {
 
     //Lottie options
     if (typeof locale !== "undefined"){
-        var defaultOptions = {
+        var defaultOptionsLeft = {
             loop: false,
             autoplay: true, 
-            animationData: animationData.default,
+            animationData: animationLeftData.default,
+            rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice'
+          }
+        }
+
+        var defaultOptionsRight = {
+            loop: false,
+            autoplay: true, 
+            animationData: animationRightData.default,
             rendererSettings: {
             preserveAspectRatio: 'xMidYMid slice'
           }
@@ -40,7 +74,6 @@ const Landing = () => {
         <div className="landing">
             <div className="container">
                 <div className="landing-text">
-                    <h1 id="landing-headline">ARTERION</h1>
                     <h2>
                         <div className="line">
                             <span>{translate('title1', null, {locale: locale})}</span>
@@ -51,10 +84,27 @@ const Landing = () => {
                     </h2>
                 </div>
 
-                <div className="landing-image">
-                    <Lottie options={defaultOptions} isClickToPauseDisabled={true} className="landing-animation" id="landing-animation"
-                    />
+                <div className="landing-animation-cont">
+                    <div className="landing-animation-cont-left">
+                        <Lottie options={defaultOptionsLeft} speed={1.5} isClickToPauseDisabled={true} className="landing-animation" id="landing-animation-left"
+                        />
+                    </div>
+                    <div className="landing-animation-cont-right">
+                        <Lottie options={defaultOptionsRight} speed={1.5} isClickToPauseDisabled={true} className="landing-animation" id="landing-animation-right"
+                        />
+                    </div>    
                 </div>
+
+                <div className="landing-images-cont">
+                    <div className="landing-image-left">
+                        <img src="interior_off_left.webp"></img>
+                    </div>
+
+                    <div className="landing-image-right">
+                        <img src="interior_off_right.webp" id="image-right"></img>
+                    </div>
+                </div>
+                
             </div>
 
             <div className='icon-scroll'>

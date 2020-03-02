@@ -13,6 +13,13 @@
 
 .gallery {
   margin-top: 50px;
+
+  h3 {
+    font-family: "Manrope";
+    font-size: calc(10px + (16 - 10) * ((100vw - 300px) / (1600 - 300)));
+    padding-top: 15px !important;
+    padding-bottom: 10px !important;
+  }
 }
 
 .galleryContainer {
@@ -91,6 +98,8 @@
   filter: grayscale(100%);
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
+  z-index: 5;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.15);
   @media only screen and (max-device-width: 768px) {
     height: 100%;
     object-fit: cover;
@@ -101,9 +110,4 @@
   filter: grayscale(0);
 }
 
-h3 {
-  font-family: "Manrope";
-  font-size: calc(10px + (16 - 10) * ((100vw - 300px) / (1600 - 300)));
-  padding-top: 15px !important;
-  padding-bottom: 10px !important;
-}
+
