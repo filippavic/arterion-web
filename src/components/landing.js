@@ -176,11 +176,11 @@ const Landing = () => {
 
                 <div className="landing-images-cont">
                     <div className="landing-image-left">
-                        <img src="interior_off_left.webp"></img>
+                        <img src={require("../images/interior_off_left.webp")}></img>
                     </div>
 
                     <div className="landing-image-right">
-                        <img src="interior_right.webp" id="image-right"></img>
+                        <img src={require("../images/interior_right.webp")} id="image-right"></img>
                     </div>
                 </div>
                 
