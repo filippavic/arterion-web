@@ -6,14 +6,8 @@ import * as animationLeftData from '../images/arterion_sketch_left.json'
 import * as animationRightData from '../images/arterion_sketch_right.json'
 import * as animationLogoData from '../images/arterion_logo.json'
 
+
 const Landing = () => {
-  useEffect(() => {
-    //gsap timeline
-    const lltl = gsap.timeline({
-      onComplete: function() {
-        ltl.play()
-      },
-    })
 
     //Lottie sketches
     const [isStopped, setStopped] = useState(true);
@@ -65,6 +59,16 @@ const Landing = () => {
             y: 10,
             skewY: 2
           })
+          .set(".slider-line4", {
+            autoAlpha: 0,
+            y: 10,
+            skewY: 2,
+          })
+          .set(".slider-line5", {
+            autoAlpha: 0,
+            y: 10,
+            skewY: 2,
+          })    
           .to(".slider-line1", {
             autoAlpha: 1,
             y: 0,
@@ -116,6 +120,41 @@ const Landing = () => {
             skewY: -2,
             stagger: { amount: 0.3 },
           })
+          .to(".slider-line4", {
+            autoAlpha: 1,
+            y: 0,
+            ease: "power4.inOut",
+            duration: 1,
+            skewY: 0,
+            stagger: { amount: 0.3 },
+          })
+          .to(".slider-line4", {
+            autoAlpha: 0,
+            y: -15,
+            ease: "power4.inOut",
+            duration: 1,
+            delay: 1.5,
+            skewY: -2,
+            stagger: { amount: 0.3 },
+          })
+          .to(".slider-line5", {
+            autoAlpha: 1,
+            y: 0,
+            ease: "power4.inOut",
+            duration: 1,
+            skewY: 0,
+            stagger: { amount: 0.3 },
+          })
+          .to(".slider-line5", {
+            autoAlpha: 0,
+            y: -15,
+            ease: "power4.inOut",
+            duration: 1,
+            delay: 1.5,
+            skewY: -2,
+            stagger: { amount: 0.3 },
+          })
+    
       }, [])
 
     //localization
@@ -238,43 +277,7 @@ line4: 'design', line5:'animation'}, 'en');
                 <div className="icon-scroll-screen"></div>
             </div>
         </div>
-
-        <div className="landing-images-cont">
-          <div className="landing-image-left">
-            <picture>
-              <source
-                type="image/webp"
-                srcSet={require("../images/interior_off_left.webp")}
-                alt="Interior render"
-              ></source>
-              <img
-                src={require("../images/interior_off_left.png")}
-                alt="Interior render"
-              ></img>
-            </picture>
-          </div>
-
-          <div className="landing-image-right">
-            <picture>
-              <source
-                type="image/webp"
-                srcSet={require("../images/interior_right.webp")}
-                alt="Interior render"
-              ></source>
-              <img
-                src={require("../images/interior_right.png")}
-                alt="Interior render"
-              ></img>
-            </picture>
-          </div>
-        </div>
-      </div>
-
-      <div className="icon-scroll">
-        <div className="icon-scroll-screen"></div>
-      </div>
-    </div>
-  )
+    )
 }
 
 export default Landing
