@@ -7,28 +7,101 @@ import * as animationRightData from '../images/arterion_sketch_right.json'
 
 const Landing = () => {
 
-    /* useEffect(() => {
+    useEffect(() => {
         //gsap timeline
-        const ltl = gsap.timeline()
-    
-        ltl.set(".landing-image-left", {
-            autoAlpha: 0
-          })
-          .set(".landing-image-right", {
-            autoAlpha: 0
-          })
-          .to(".landing-image-left, .landing-image-right", {
-            autoAlpha: 1,
-            ease: "power2.easeInOut",
-            delay: 3,
-            duration: 7,
-            stagger: {amount: 0.3}
-          })
-          .to(".landing-animation-cont", {
+        const lltl = gsap.timeline({onComplete: function(){
+            ltl.play();
+        }})
+
+        lltl.set(".line", {
             autoAlpha: 0,
-            ease: "power4.out"
+            y: 15,
+            skewY: 2
+        })
+        .to(".line", {
+            autoAlpha: 1,
+            y: 0,
+            ease: "power4.inOut",
+            duration: 2,
+            delay: 4,
+            skewY: 0,
+            stagger: { amount: 0.3 },
           })
-      }, []) */
+
+        const ltl = gsap.timeline({
+            paused: true,
+			onComplete: function(){
+				ltl.restart();
+			}
+		})
+    
+        ltl.set(".slider-line1", {
+            autoAlpha: 0,
+            y: 15,
+            skewY: 2
+          })
+          .set(".slider-line2", {
+            autoAlpha: 0,
+            y: 10,
+            skewY: 2
+          })
+          .set(".slider-line3", {
+            autoAlpha: 0,
+            y: 10,
+            skewY: 2
+          })
+          .to(".slider-line1", {
+            autoAlpha: 1,
+            y: 0,
+            ease: "power4.inOut",
+            duration: 1,
+            skewY: 0,
+            stagger: { amount: 0.3 },
+          })
+          .to(".slider-line1", {
+            autoAlpha: 0,
+            y: -15,
+            ease: "power4.inOut",
+            duration: 1,
+            delay: 1.5,
+            skewY: -2,
+            stagger: { amount: 0.3 },
+          })
+          .to(".slider-line2", {
+            autoAlpha: 1,
+            y: 0,
+            ease: "power4.inOut",
+            duration: 1,
+            skewY: 0,
+            stagger: { amount: 0.3 },
+          })
+          .to(".slider-line2", {
+            autoAlpha: 0,
+            y: -15,
+            ease: "power4.inOut",
+            duration: 1,
+            delay: 1.5,
+            skewY: -2,
+            stagger: { amount: 0.3 },
+          })
+          .to(".slider-line3", {
+            autoAlpha: 1,
+            y: 0,
+            ease: "power4.inOut",
+            duration: 1,
+            skewY: 0,
+            stagger: { amount: 0.3 },
+          })
+          .to(".slider-line3", {
+            autoAlpha: 0,
+            y: -15,
+            ease: "power4.inOut",
+            duration: 1,
+            delay: 1.5,
+            skewY: -2,
+            stagger: { amount: 0.3 },
+          })
+      }, [])
 
     //localization
     function getLocale() {
@@ -44,8 +117,8 @@ const Landing = () => {
     
     var locale = getLocale();
     
-    translate.add({title1: '3D vizualizacije', title2: 'interijera, eksterijera i proizvoda'}, 'hr');
-    translate.add({title1: '3D visualizations:', title2: 'interior, exterior and products'}, 'en');
+    translate.add({title1: '3D vizualizacije', title2: 'interijera', title3: 'eksterijera', title4: 'proizvoda'}, 'hr');
+    translate.add({title1: '3D visualizations:', title2: 'interior', title3: 'exterior', title4: 'products'}, 'en');
 
 
     //Lottie options
@@ -78,8 +151,14 @@ const Landing = () => {
                         <div className="line">
                             <span>{translate('title1', null, {locale: locale})}</span>
                         </div>
-                        <div className="line">
+                        <div className="slider-line1">
                             <span>{translate('title2', null, {locale: locale})}</span>
+                        </div>
+                        <div className="slider-line2" id="proba">
+                            <span>{translate('title3', null, {locale: locale})}</span>
+                        </div>
+                        <div className="slider-line3">
+                            <span>{translate('title4', null, {locale: locale})}</span>
                         </div>
                     </h2>
                 </div>
@@ -101,7 +180,7 @@ const Landing = () => {
                     </div>
 
                     <div className="landing-image-right">
-                        <img src="interior_off_right.webp" id="image-right"></img>
+                        <img src="interior_right.webp" id="image-right"></img>
                     </div>
                 </div>
                 
