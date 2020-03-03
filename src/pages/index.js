@@ -40,7 +40,8 @@ function IndexPage() {
       })
   }, [])
 
-  if(window){
+  //mobile viewport
+  if(typeof window !== "undefined"){
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
   }
