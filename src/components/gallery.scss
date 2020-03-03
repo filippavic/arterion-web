@@ -19,6 +19,10 @@
     font-size: calc(10px + (16 - 10) * ((100vw - 300px) / (1600 - 300)));
     padding-top: 15px !important;
     padding-bottom: 10px !important;
+    @media only screen and (max-device-width: 768px) {
+      padding-top: 5px !important;
+      padding-bottom: 5px !important;
+    }
   }
 }
 
@@ -52,6 +56,9 @@
   // background-size: 20px 20px;
   background-color: white;
   height: auto;
+  @media only screen and (max-device-width: 768px) {
+    width: 25%;
+  }
 }
 
 .bottomGalleryContainer {
@@ -72,6 +79,9 @@
   float: right;
   width: 60%;
   background-color: white;
+  @media only screen and (max-device-width: 768px) {
+    width: 75%;
+  }
 }
 
 .rightBottomGallery {
@@ -82,6 +92,9 @@
   // background-position: 0 0;
   // background-size: 20px 20px;
   height: auto;
+  @media only screen and (max-device-width: 768px) {
+    width: 25%;
+  }
 }
 
 .leftBottomGallery {
@@ -90,6 +103,9 @@
   float: right;
   width: 60%;
   background-color: white;
+  @media only screen and (max-device-width: 768px) {
+    width: 75%;
+  }
 }
 
 .image {
@@ -109,5 +125,3 @@
   -webkit-filter: grayscale(0);
   filter: grayscale(0);
 }
-
-

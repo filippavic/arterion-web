@@ -604,7 +604,9 @@ header {
     padding-top: 10%;
     padding-left: 10%;
     z-index: 2;
-    visibility: hidden;
+    @media only screen and (max-device-width: 768px) {
+      padding-top: 30px;
+    }
 
     .contact-animation-cont {
       width: 70%;
@@ -725,7 +727,10 @@ header {
     z-index: 2;
     padding-right: 20px;
     padding-bottom: 10px;
-    background-color: #000;
+    @media only screen and (max-device-width: 768px) {
+      justify-content: center;
+      align-items: flex-end;
+    }
 
     a {
       text-decoration: none;
