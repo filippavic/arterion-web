@@ -6,8 +6,14 @@ import * as animationLeftData from '../images/arterion_sketch_left.json'
 import * as animationRightData from '../images/arterion_sketch_right.json'
 import * as animationLogoData from '../images/arterion_logo.json'
 
-
 const Landing = () => {
+  useEffect(() => {
+    //gsap timeline
+    const lltl = gsap.timeline({
+      onComplete: function() {
+        ltl.play()
+      },
+    })
 
     //Lottie sketches
     const [isStopped, setStopped] = useState(true);
@@ -232,7 +238,43 @@ line4: 'design', line5:'animation'}, 'en');
                 <div className="icon-scroll-screen"></div>
             </div>
         </div>
-    )
+
+        <div className="landing-images-cont">
+          <div className="landing-image-left">
+            <picture>
+              <source
+                type="image/webp"
+                srcSet={require("../images/interior_off_left.webp")}
+                alt="Interior render"
+              ></source>
+              <img
+                src={require("../images/interior_off_left.png")}
+                alt="Interior render"
+              ></img>
+            </picture>
+          </div>
+
+          <div className="landing-image-right">
+            <picture>
+              <source
+                type="image/webp"
+                srcSet={require("../images/interior_right.webp")}
+                alt="Interior render"
+              ></source>
+              <img
+                src={require("../images/interior_right.png")}
+                alt="Interior render"
+              ></img>
+            </picture>
+          </div>
+        </div>
+      </div>
+
+      <div className="icon-scroll">
+        <div className="icon-scroll-screen"></div>
+      </div>
+    </div>
+  )
 }
 
 export default Landing
