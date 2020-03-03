@@ -5,6 +5,8 @@ import gsap from "gsap"
 import * as animationLeftData from '../images/arterion_sketch_left.json'
 import * as animationRightData from '../images/arterion_sketch_right.json'
 
+import logo from "../images/arterion_logo.webp"
+
 const Landing = () => {
 
     useEffect(() => {
@@ -117,8 +119,10 @@ const Landing = () => {
     
     var locale = getLocale();
     
-    translate.add({title1: '3D vizualizacije', title2: 'interijera', title3: 'eksterijera', title4: 'proizvoda'}, 'hr');
-    translate.add({title1: '3D visualizations:', title2: 'interior', title3: 'exterior', title4: 'products'}, 'en');
+    translate.add({line1: 'vizualizacija', line2: 'modeliranje', line3: 'teksturiranje',
+line4: 'dizajn', line5: 'animacije'}, 'hr');
+    translate.add({line1: 'visualization', line2: 'modelling', line3: 'texturing',
+line4: 'design', line5:'animation'}, 'en');
 
 
     //Lottie options
@@ -147,21 +151,32 @@ const Landing = () => {
         <div className="landing">
             <div className="container">
                 <div className="landing-text">
-                    <h2>
-                        <div className="line">
-                            <span>{translate('title1', null, {locale: locale})}</span>
+                        <div className="landing-text-main">     
+                            <picture>
+                                <source srcSet={require("../images/arterion_logo.webp")} type="image/webp" alt="ARTERION"/>
+                                <img src={require("../images/arterion_logo.png")} alt="ARTERION"/>
+                            </picture>
                         </div>
-                        <div className="slider-line1">
-                            <span>{translate('title2', null, {locale: locale})}</span>
+                        <div className="landing-text-slider">
+                            <h2>
+                                <div className="slider-line1">
+                                    <span>{translate('line1', null, {locale: locale})}</span>
+                                </div>
+                                <div className="slider-line2" id="proba">
+                                    <span>{translate('line2', null, {locale: locale})}</span>
+                                </div>
+                                <div className="slider-line3">
+                                    <span>{translate('line3', null, {locale: locale})}</span>
+                                </div>
+                                <div className="slider-line4">
+                                    <span>{translate('line4', null, {locale: locale})}</span>
+                                </div>
+                                <div className="slider-line5">
+                                    <span>{translate('line5', null, {locale: locale})}</span>
+                                </div>
+                            </h2>    
                         </div>
-                        <div className="slider-line2" id="proba">
-                            <span>{translate('title3', null, {locale: locale})}</span>
-                        </div>
-                        <div className="slider-line3">
-                            <span>{translate('title4', null, {locale: locale})}</span>
-                        </div>
-                    </h2>
-                </div>
+                    </div>
 
                 <div className="landing-animation-cont">
                     <div className="landing-animation-cont-left">
@@ -176,11 +191,18 @@ const Landing = () => {
 
                 <div className="landing-images-cont">
                     <div className="landing-image-left">
-                        <img src={require("../images/interior_off_left.webp")}></img>
+                        <picture>
+                            <source type="image/webp" srcSet={require("../images/interior_off_left.webp")} alt="Interior render"></source>
+                            <img src={require("../images/interior_off_left.png")} alt="Interior render"></img>
+                        </picture>
+                        
                     </div>
 
                     <div className="landing-image-right">
-                        <img src={require("../images/interior_right.webp")} id="image-right"></img>
+                        <picture>
+                            <source type="image/webp" srcSet={require("../images/interior_right.webp")} alt="Interior render"></source>
+                            <img src={require("../images/interior_right.png")} alt="Interior render"></img>
+                        </picture>
                     </div>
                 </div>
                 

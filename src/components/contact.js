@@ -53,7 +53,7 @@ const Contact = () => {
   translate.add(
     {
       country: "Hrvatska",
-      owner: "vl. Siniša Slovenec",
+      owner: "Siniša Slovenec",
       title1: "Sviđa Vam se što vidite?",
       title2: "Slobodno se javite.",
     },
@@ -62,9 +62,9 @@ const Contact = () => {
   translate.add(
     {
       country: "Croatia",
-      owner: "owner: Siniša Slovenec",
+      owner: "Siniša Slovenec",
       title1: "Like what you see?",
-      title2: "Feel free to contact.",
+      title2: "Feel free to contact me.",
     },
     "en"
   )

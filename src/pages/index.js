@@ -40,6 +40,11 @@ function IndexPage() {
       })
   }, [])
 
+  if(window){
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+
   //localization
   function getLocale() {
     var lang = ""
@@ -79,8 +84,11 @@ function IndexPage() {
           <title>{translate("metaTitle", null, { locale: locale })}</title>
           <meta
             name="description"
-            content={translate("metaDesc", null, { locale: locale })}
-          />
+            content={translate("metaDesc", null, { locale: locale })} />
+            <meta name="theme-color" content="#997658" />
+            <meta name="msapplication-navbutton-color" content="#997658" />
+            <meta name="apple-mobile-web-app-status-bar-style" content="#997658" />
+          
           <meta
             name="google-site-verification"
             content="ErRyGpuFwE1Gita3NspBPxJes2cGWcl8swkuUNB3-00"

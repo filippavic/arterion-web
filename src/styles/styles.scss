@@ -93,6 +93,7 @@ header {
     justify-content: space-between;
     height: 80px;
     .logo {
+      visibility: hidden;
       a {
         text-decoration: none;
         font-weight: bold;
@@ -102,6 +103,7 @@ header {
     }
 
     .header-menu {
+      visibility: hidden;
       a {
         text-decoration: none;
         font-weight: bold;
@@ -318,6 +320,9 @@ header {
   min-height: 400px;
   background-color: #ffffff;
   position: relative;
+  @media only screen and (max-device-width: 600px){
+    height: calc(var(--vh, 1vh) * 100);
+  }
 
   .container {
     width: 100%;
@@ -325,55 +330,68 @@ header {
     position: relative;
     padding-top: 10px;
 
-    .landing-text {
-      position: absolute;
-      color: $black;
-      top: 45%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 10;
-      transition: top;
-      transition-timing-function: $ease-in-out-cubic;
-      transition-duration: 0.6s;
-      @media (max-width: 768px){
-        top: 33%;
-      }
+    .landing-text{
+      // position: absolute;
 
-      h2 {
-        font-family: "Manrope";
-        font-size: calc(2vw + 2vh + 1vmin);
-        font-weight: 500;
+      .landing-text-main {
         text-align: center;
-        transition: font-size;
+        position: absolute;
+        color: $black;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0 auto;
+        z-index: 10;
+        transition: top;
         transition-timing-function: $ease-in-out-cubic;
         transition-duration: 0.6s;
-        
         @media (max-width: 768px){
-          font-size: calc(2vw + 2vh + 3vmin);
-          white-space: nowrap;
+          top: 33%;
         }
 
+        img{
+          width: 40%;
+          @media (max-width: 768px){
+            width: 60%;
+          }
+        }
+      }
+
+      .landing-text-slider{
+        width: 60%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 11;
+        @media (max-width: 768px){
+          top: 35%;
+        }
+
+        h2 {
+          font-family: "Manrope";
+          font-size: calc(2vw + 2vh + 1vmin);
+          transition: font-size;
+          transition-timing-function: $ease-in-out-cubic;
+          transition-duration: 0.6s;
+        }
         span {
           display: inline-block;
         }
+
+        .slider-line1, .slider-line2, .slider-line3, .slider-line4, .slider-line5 {
+          visibility: hidden;
+          color: $accent-color;
+          font-weight: 700;
+          margin: auto;
+          position: absolute;
+          top: 0; left: 0; bottom: 0; right: 0;
+          text-align: center;
+          
+        }
+      }  
       }
-      .slider-line1, .slider-line2, .slider-line3 {
-        visibility: hidden;
-        position: absolute;
-        color: $accent-color;
-        font-weight: 700;
-      }
-      .slider-line1 {
-        padding-left: 20%;
-      }
-      .slider-line2 {
-        padding-left: 15%;
-      }
-      .slider-line3 {
-        padding-left: 18%;
-      }
-      
-    }
+
 
     .landing-animation-cont {
       position: absolute;

@@ -78,8 +78,8 @@ function Header() {
 
   var locale = getLocale();
 
-  translate.add({contact: 'KONTAKT', country: 'Hrvatska', owner: 'vl. Siniša Slovenec'}, 'hr');
-  translate.add({contact: 'CONTACT', country: 'Croatia', owner: 'owner: Siniša Slovenec'}, 'en');
+  translate.add({contact: 'KONTAKT', country: 'Hrvatska', owner: 'Siniša Slovenec'}, 'hr');
+  translate.add({contact: 'CONTACT', country: 'Croatia', owner: 'Siniša Slovenec'}, 'en');
   
  
   return(
@@ -92,7 +92,7 @@ function Header() {
             </div>
 
             <div className="header-menu">
-              <a role="button" tabIndex={0} className="contact-animate" id="contact-button" onClick={() => openCloseMenu()}>{translate('contact', null, {locale: locale})}</a>
+              <a role="button" tabIndex={0} aria-label="contact" className="contact-animate" id="contact-button" onClick={() => openCloseMenu()}>{translate('contact', null, {locale: locale})}</a>
             </div>
           </div>
         </div>
@@ -100,7 +100,7 @@ function Header() {
 
       <div className={isMenuOpen ? "menu-cont is-open" : "menu-cont"} id='menu'>
         <div className="menu-info">
-            <a role="button" tabIndex={0} className="close-button" onClick={() => openCloseMenu()}></a>
+            <a role="button" tabIndex={0} aria-label="close" className="close-button" onClick={() => openCloseMenu()}></a>
             <h3>{translate('contact', null, {locale: locale})}</h3>
         </div>
 
