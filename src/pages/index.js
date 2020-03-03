@@ -18,12 +18,7 @@ function IndexPage() {
     //gsap timeline
     const tl = gsap.timeline()
 
-    tl.set(".landing-text", {
-      autoAlpha: 0,
-      y: 50,
-      skewY: 2,
-    })
-      .set(".header-menu, .logo", {
+    tl.set(".header-menu, .logo", {
         autoAlpha: 0,
         y: 10,
       })
@@ -31,17 +26,11 @@ function IndexPage() {
         autoAlpha: 0,
         y: -10,
       })
-      .to(".landing-text", 2, {
-        autoAlpha: 1,
-        y: 0,
-        ease: "power4.out",
-        skewY: 0,
-        stagger: { amount: 0.3 },
-      })
       .to(".header-menu, .logo", 1.5, {
         autoAlpha: 1,
         y: 0,
         ease: "power4.out",
+        delay: 4,
         stagger: { amount: 0.3 },
       })
       .to(".icon-scroll", 4, {

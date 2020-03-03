@@ -1,4 +1,4 @@
-$accent-color: #00b8ea;
+$accent-color: #997658;
 $grey: #ecedf3;
 $grey-darker: #646464;
 $black: #080808;
@@ -52,7 +52,7 @@ html,
 body {
   font-family: "Manrope";
   font-size: 16px;
-  background-color: $black;
+  background-color: #fff;
 }
 
 ::selection {
@@ -97,7 +97,7 @@ header {
         text-decoration: none;
         font-weight: bold;
         letter-spacing: 1.5px;
-        color: #00b8ea;
+        color: $accent-color;
       }
     }
 
@@ -106,7 +106,7 @@ header {
         text-decoration: none;
         font-weight: bold;
         letter-spacing: 1.5px;
-        color: #00b8ea;
+        color: $accent-color;
         cursor: pointer;
 
         &:before {
@@ -166,6 +166,7 @@ header {
   flex-direction: column;
   justify-content: space-between;
   transform: translateX(300px);
+  opacity: 0.98;
 
   &.is-open {
     transform: translateX(0px);
@@ -314,56 +315,178 @@ header {
 //Landing
 .landing {
   height: 100vh;
-  min-height: 700px;
-  background-color: $black;
+  min-height: 400px;
+  background-color: #ffffff;
   position: relative;
 
   .container {
     width: 100%;
     height: 100%;
     position: relative;
-    display: flex;
+    padding-top: 10px;
 
     .landing-text {
       position: absolute;
-      color: #fff;
-      margin-left: 10vw;
-      margin-top: calc(4vw + 6vh + 5vmin);
-      z-index: 2;
-
-      h1 {
-        font-family: "Manrope";
-        font-weight: bold;
-        font-size: calc(3vw + 4vh + 2vmin);
+      color: $black;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      transition: top;
+      transition-timing-function: $ease-in-out-cubic;
+      transition-duration: 0.6s;
+      @media (max-width: 768px){
+        top: 33%;
       }
 
       h2 {
         font-family: "Manrope";
-        font-size: calc(1vw + 1vh + 1vmin);
-        font-weight: lighter !important;
+        font-size: calc(2vw + 2vh + 1vmin);
+        font-weight: 500;
+        text-align: center;
+        transition: font-size;
+        transition-timing-function: $ease-in-out-cubic;
+        transition-duration: 0.6s;
+        
+        @media (max-width: 768px){
+          font-size: calc(2vw + 2vh + 3vmin);
+          white-space: nowrap;
+        }
 
         span {
           display: inline-block;
         }
       }
+      .slider-line1, .slider-line2, .slider-line3 {
+        visibility: hidden;
+        position: absolute;
+        color: $accent-color;
+        font-weight: 700;
+      }
+      .slider-line1 {
+        padding-left: 20%;
+      }
+      .slider-line2 {
+        padding-left: 15%;
+      }
+      .slider-line3 {
+        padding-left: 18%;
+      }
+      
+    }
 
-      @media (max-width: 600px) {
-        margin-top: calc(5vw + 7vh + 10vmin);
+    .landing-animation-cont {
+      position: absolute;
+      z-index: 8;
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      // vertical-align: bottom;
+
+      @keyframes changeOpacity{
+        from {opacity: 1}
+        to {opacity: 0}
+      }
+  
+      .landing-animation-cont-left {
+        left: 0;
+        bottom: 5%;
+        position: absolute;
+        width: calc(25vw + 5vh + 5vmin);
+        animation-name: changeOpacity;
+        animation-fill-mode: forwards;
+        animation-delay: 3s;
+        animation-duration: 3.5s;
+        animation-timing-function: $ease-in-out-cubic;
+        @media (max-width: 550px) {
+          width: calc(20vw + 5vh + 4vmin);
+          bottom: 2%;
+        }     
+      }
+
+      .landing-animation-cont-right {
+        right: 0;
+        bottom: 1vh;
+        position: absolute;
+        width: calc(40vw + 10vh + 5vmin);
+        animation-name: changeOpacity;
+        animation-fill-mode: forwards;
+        animation-delay: 3s;
+        animation-duration: 3.5s;
+        animation-timing-function: $ease-in-out-cubic;
+        @media (max-width: 550px) {
+          width: calc(35vw + 10vh + 5vmin);
+          bottom: 0.6vh;
+        } 
       }
     }
 
-    .landing-image {
-      width: 80%;
-      margin: auto;
+    .landing-images-cont{
+      position: absolute;
+      width: 100%;
+      height: 100%;
 
-      @media (max-width: 600px) {
-        width: 120%;
+      @keyframes reveal{
+        from {opacity: 0}
+        to {opacity: 1}
       }
+
+      .landing-image-left {
+        bottom: 5%;
+        left: 0;
+        width: calc(25vw + 5vh + 5vmin);
+        display: inline-block;
+        position: absolute;
+        opacity: 0;
+        animation-name: reveal;
+        animation-fill-mode: forwards;
+        animation-delay: 3s;
+        animation-duration: 5s;
+        animation-timing-function: $ease-in-out-cubic;
+        @media (max-width: 550px) {
+          width: calc(20vw + 5vh + 4vmin);
+          bottom: 2%;
+        }
+        
+
+        img {
+          margin-bottom: 0;
+        }
+      }
+
+      .landing-image-right {
+        right: 0;
+        bottom: 0;
+        width: calc(40vw + 10vh + 5vmin);
+        display: inline-block;
+        position: absolute;
+        opacity: 0;
+        animation-name: reveal;
+        animation-fill-mode: forwards;
+        animation-delay: 3.5s;
+        animation-duration: 4s;
+        animation-timing-function: $ease-in-out-cubic;
+        @media (max-width: 550px) {
+          width: calc(35vw + 10vh + 5vmin)
+        }
+        
+
+        img {
+          margin-bottom: 0;
+        }
+      }
+
     }
   }
 
-  .icon-scroll,
+  .icon-scroll {
+    visibility: hidden;
+    z-index: 10;
+    position: absolute;
+    left: 52%;
+  }
   .icon-scroll:before {
+    z-index: 10;
     position: absolute;
     left: 52%;
   }
@@ -467,18 +590,19 @@ header {
 //Contact
 
 .contact-cont {
-  height: 45vh;
-  // min-height: 700px;
-  background-color: $black;
+  height: 100vh;
+  min-height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: #000000;
+  background: linear-gradient(-3deg, black 0%, black 90%, transparent 90.2%);
+  position: relative;
+
 
   .contact-top {
-    flex-basis: 30%;
-    padding-top: 80px;
-    padding-left: 3%;
+    flex-basis: 40%;
+    padding-top: 10%;
+    padding-left: 10%;
     z-index: 2;
     @media only screen and (max-device-width: 768px) {
       padding-top: 30px;
@@ -498,22 +622,23 @@ header {
     }
 
     h1 {
-      font-size: calc(35px + (16 - 10) * ((100vw - 300px) / (1600 - 300)));
+      font-size: calc(50px + (16 - 10) * ((100vw - 300px) / (1600 - 300)));
     }
 
     h2 {
-      font-size: calc(20px + (16 - 10) * ((100vw - 300px) / (1600 - 300)));
+      font-size: calc(30px + (16 - 10) * ((100vw - 300px) / (1600 - 300)));
       font-weight: 600;
     }
   }
 
   .contact-middle {
     padding-top: 20px;
-    flex-basis: 33%;
+    flex-basis: 25%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     z-index: 2;
+    background-color: #000;
 
     .contact-left {
       display: flex;
@@ -521,6 +646,7 @@ header {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      visibility: hidden;
 
       a {
         text-decoration: none;
@@ -576,6 +702,7 @@ header {
       text-align: center;
       flex-direction: column;
       justify-content: center;
+      visibility: hidden;
 
       h3 {
         font-family: "Manrope";
