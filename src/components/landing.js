@@ -1,13 +1,20 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import Lottie from 'react-lottie'
 import translate from "translate-js"
 import gsap from "gsap"
 import * as animationLeftData from '../images/arterion_sketch_left.json'
 import * as animationRightData from '../images/arterion_sketch_right.json'
+import * as animationLogoData from '../images/arterion_logo.json'
 
-import logo from "../images/arterion_logo.webp"
 
 const Landing = () => {
+
+    //Lottie sketches
+    const [isStopped, setStopped] = useState(true);
+
+    setTimeout(function(){
+        setStopped(false);
+      }, 1200);
 
     useEffect(() => {
         //gsap timeline
@@ -129,7 +136,7 @@ line4: 'design', line5:'animation'}, 'en');
     if (typeof locale !== "undefined"){
         var defaultOptionsLeft = {
             loop: false,
-            autoplay: true, 
+            autoplay: false, 
             animationData: animationLeftData.default,
             rendererSettings: {
             preserveAspectRatio: 'xMidYMid slice'
@@ -138,8 +145,17 @@ line4: 'design', line5:'animation'}, 'en');
 
         var defaultOptionsRight = {
             loop: false,
-            autoplay: true, 
+            autoplay: false, 
             animationData: animationRightData.default,
+            rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice'
+          }
+        }
+
+        var defaultOptionsLogo = {
+            loop: false,
+            autoplay: true, 
+            animationData: animationLogoData.default,
             rendererSettings: {
             preserveAspectRatio: 'xMidYMid slice'
           }
@@ -151,11 +167,9 @@ line4: 'design', line5:'animation'}, 'en');
         <div className="landing">
             <div className="container">
                 <div className="landing-text">
-                        <div className="landing-text-main">     
-                            <picture>
-                                <source srcSet={require("../images/arterion_logo.webp")} type="image/webp" alt="ARTERION"/>
-                                <img src={require("../images/arterion_logo.png")} alt="ARTERION"/>
-                            </picture>
+                        <div className="landing-logo">
+                        <Lottie options={defaultOptionsLogo} speed={1.5} isClickToPauseDisabled={true} className="logo-animation" id="logo-animation"
+                        />     
                         </div>
                         <div className="landing-text-slider">
                             <h2>
@@ -180,22 +194,28 @@ line4: 'design', line5:'animation'}, 'en');
 
                 <div className="landing-animation-cont">
                     <div className="landing-animation-cont-left">
-                        <Lottie options={defaultOptionsLeft} speed={1.5} isClickToPauseDisabled={true} className="landing-animation" id="landing-animation-left"
+                        <Lottie options={defaultOptionsLeft} isStopped={isStopped} speed={1.5} isClickToPauseDisabled={true} className="landing-animation" id="landing-animation-left"
                         />
                     </div>
                     <div className="landing-animation-cont-right">
-                        <Lottie options={defaultOptionsRight} speed={1.5} isClickToPauseDisabled={true} className="landing-animation" id="landing-animation-right"
+                        <Lottie options={defaultOptionsRight} isStopped={isStopped} speed={1.5} isClickToPauseDisabled={true} className="landing-animation" id="landing-animation-right"
                         />
                     </div>    
                 </div>
 
                 <div className="landing-images-cont">
+                    <div className="landing-image-left-on">
+                        <picture>
+                            <source type="image/webp" srcSet={require("../images/interior_on_left.webp")} alt="Interior render"></source>
+                            <img src={require("../images/interior_on_left.png")} alt="Interior render"></img>
+                        </picture>                   
+                    </div>
+                    
                     <div className="landing-image-left">
                         <picture>
                             <source type="image/webp" srcSet={require("../images/interior_off_left.webp")} alt="Interior render"></source>
                             <img src={require("../images/interior_off_left.png")} alt="Interior render"></img>
-                        </picture>
-                        
+                        </picture>                   
                     </div>
 
                     <div className="landing-image-right">
