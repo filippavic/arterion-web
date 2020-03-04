@@ -71,11 +71,11 @@ const Contact = () => {
 
   //scroll trigger
   const onEnterViewport = () => {
-      contacttl.play()
+      contacttl.timeScale(1).play();
   }
 
   const onExitViewport = () => {
-      contacttl.reverse(0);
+      contacttl.timeScale(3).reverse();
   }
 
   // //Lottie options
