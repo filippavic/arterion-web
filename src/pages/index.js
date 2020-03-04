@@ -15,6 +15,10 @@ import "../styles/styles.scss"
 
 function IndexPage() {
   useEffect(() => {
+
+    //scroll to top
+    window.scrollTo(0, 0);
+
     //gsap timeline
     const tl = gsap.timeline()
 
@@ -31,7 +35,7 @@ function IndexPage() {
         y: 0,
         ease: "power4.out",
         delay: 4,
-        stagger: { amount: 0.3 },
+        stagger: { amount: 0.2 },
       })
       .to(".icon-scroll", 4, {
         autoAlpha: 1,

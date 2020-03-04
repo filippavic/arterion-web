@@ -18,21 +18,21 @@ const Contact = () => {
       skewY: 2,
       duration: 1,
       stagger: {ammount: 0.7}
-    }).from(".contact-left", {
+    }, 0).from(".contact-left", {
       autoAlpha: 0,
       y: 25,
       skewY: 3,
       ease: "power4.out",
       stagger: {amount: 0.4},
       duration: 0.5
-    }).from(".contact-right", {
+    }, 0.4).from(".contact-right", {
       autoAlpha: 0,
       y: 20,
       skewY: -3,
       ease: "power4.out",
       stagger: {amount: 0.4},
       duration: 0.5
-    })
+    }, 0.4)
 
   }, [contacttl]);
 
