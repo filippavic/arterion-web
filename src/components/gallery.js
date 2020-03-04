@@ -2,7 +2,6 @@ import React from "react"
 import Image from "../components/image"
 import { Parallax } from "react-scroll-parallax"
 import translate from "translate-js"
-// import Zoom from 'react-medium-image-zoom'
 
 import "./gallery.scss"
 

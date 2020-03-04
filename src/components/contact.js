@@ -78,20 +78,6 @@ const Contact = () => {
       contacttl.timeScale(3).reverse();
   }
 
-  // //Lottie options
-  // if (typeof locale !=="undefined") {
-  //     var defaultOptions = {
-  //         loop: false,
-  //         autoplay: false,
-  //         animationData:
-  //             locale.localeCompare("hr") === 0
-  //                 ? contactAnimationDataHR.default
-  //                 : contactAnimationDataEN.default,
-  //         rendererSettings: {
-  //         preserveAspectRatio: 'xMidYMid slice'
-  //       }
-  //     }
-  // }
 
   return (
     <div className="contact-cont">

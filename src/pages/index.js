@@ -4,8 +4,6 @@ import gsap from "gsap"
 import translate from "translate-js"
 import { ParallaxProvider } from "react-scroll-parallax"
 
-//import Image from "../components/image"
-//import SEO from "../components/seo"
 import Header from "../components/header"
 import Landing from "../components/landing"
 import Contact from "../components/contact"
@@ -67,17 +65,17 @@ function IndexPage() {
   translate.add(
     {
       metaTitle:
-        "ARTERION | 3D vizualizacije interijera, eksterijera i proizvoda",
+        "ARTERION | usluge vizualizacije, modeliranja, teksturiranja, dizajna i animacije ",
       metaDesc:
-        "ARTERION obrt za dizajn pruža usluge izrade realističnih 3D vizualizacija interijera i eksterijera te raznih proizvoda.",
+        "ARTERION obrt za dizajn pruža usluge izrade 3D vizualizacija interijera i eksterijera, modeliranja i teksturiranja, dizajna te animacije.",
     },
     "hr"
   )
   translate.add(
     {
-      metaTitle: "ARTERION | 3D interior, exterior and product visualization",
+      metaTitle: "ARTERION | visualization, modeling, texturing, design and animation",
       metaDesc:
-        "ARTERION offers 3D visualization services, ranging from high-quality interior and exterior renders to 3D product modeling and rendering.",
+        "ARTERION offers 3D visualization services, including interior and exterior renders, product modeling and texturing, design and animation.",
     },
     "en"
   )
@@ -85,19 +83,54 @@ function IndexPage() {
   return (
     <ParallaxProvider>
       <main>
-        <Helmet>
+        <Helmet htmlAttributes={{ lang: locale }}>
           <title>{translate("metaTitle", null, { locale: locale })}</title>
           <meta
             name="description"
             content={translate("metaDesc", null, { locale: locale })} />
-            <meta name="theme-color" content="#997658" />
-            <meta name="msapplication-navbutton-color" content="#997658" />
-            <meta name="apple-mobile-web-app-status-bar-style" content="#997658" />
-          
+          <meta name="theme-color" content="#997658" />
+          <meta name="msapplication-navbutton-color" content="#997658" />
+          <meta name="apple-mobile-web-app-status-bar-style" content="#997658" />
+          <meta name="copyright"content="apeiron" />
+          <meta name="og:url" content="http://arterion.design" />
+          <meta
+            name="og:site_name"
+            content="ARTERION | visualization, modeling, texturing, design and animation"/>
+          <meta 
+            name="og:description" 
+            content="ARTERION offers 3D visualization services, including interior and exterior renders, product modeling and texturing, design and animation."/>
           <meta
             name="google-site-verification"
             content="ErRyGpuFwE1Gita3NspBPxJes2cGWcl8swkuUNB3-00"
           />
+           <meta
+            name="twitter:site_name"
+            content="ARTERION | visualization, modeling, texturing, design and animation"/>
+          <meta 
+            name="twitter:description" 
+            content="ARTERION offers 3D visualization services, including interior and exterior renders, product modeling and texturing, design and animation."/>
+          <script type="application/ld+json">{`{
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "@id": "http://arterion.design",
+            "name": "ARTERION obrt za dizajn",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Jalšje 22",
+              "addressLocality": "Veliko Trgovišće",
+              "addressRegion": "Krapina-Zagorje County",
+              "postalCode": "49214",
+              "addressCountry": "HR"
+            },
+            "url": "http://arterion.design",
+            "telephone": "+385913331810",
+            "logo": {
+              "@type": "ImageObject",
+              "width": 800,
+              "height": 89,
+              "url": "https://i.ibb.co/XLkrkY6/output-onlinepngtools.png"
+            },
+        }`}</script>
         </Helmet>
 
         <div>

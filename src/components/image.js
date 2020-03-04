@@ -7,7 +7,6 @@ import "./gallery.scss"
 const Image = props => (
 
   //dinamican Gatsby Image
-
   <StaticQuery
     query={graphql`
       query {
