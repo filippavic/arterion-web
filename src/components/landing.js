@@ -39,6 +39,16 @@ const Landing = () => {
             y: 10,
             skewY: 2
           })
+          .set(".slider-line4", {
+            autoAlpha: 0,
+            y: 10,
+            skewY: 2,
+          })
+          .set(".slider-line5", {
+            autoAlpha: 0,
+            y: 10,
+            skewY: 2,
+          })    
           .to(".slider-line1", {
             autoAlpha: 1,
             y: 0,
@@ -91,6 +101,41 @@ const Landing = () => {
             skewY: -2,
             stagger: { amount: 0.3 },
           })
+          .to(".slider-line4", {
+            autoAlpha: 1,
+            y: 0,
+            ease: "power4.inOut",
+            duration: 1,
+            skewY: 0,
+            stagger: { amount: 0.3 },
+          })
+          .to(".slider-line4", {
+            autoAlpha: 0,
+            y: -15,
+            ease: "power4.inOut",
+            duration: 1,
+            delay: 1.5,
+            skewY: -2,
+            stagger: { amount: 0.3 },
+          })
+          .to(".slider-line5", {
+            autoAlpha: 1,
+            y: 0,
+            ease: "power4.inOut",
+            duration: 1,
+            skewY: 0,
+            stagger: { amount: 0.3 },
+          })
+          .to(".slider-line5", {
+            autoAlpha: 0,
+            y: -15,
+            ease: "power4.inOut",
+            duration: 1,
+            delay: 1.5,
+            skewY: -2,
+            stagger: { amount: 0.3 },
+          })
+    
       }, [])
 
     //localization

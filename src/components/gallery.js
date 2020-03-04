@@ -105,7 +105,7 @@ function Gallery() {
       </div>
       <div className="bottomGalleryContainer">
         <div className="leftBottomGallery">
-          <Parallax className="custom-class" y={[-15, 20]} tagOuter="figure">
+          <Parallax className="custom-class" y={[-15, 15]} tagOuter="figure">
             <Image alt="Product visualization" filename="product_2.jpg" />
           </Parallax>
           <h3 className="description">

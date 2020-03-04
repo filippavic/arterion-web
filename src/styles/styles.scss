@@ -322,7 +322,7 @@ header {
   min-height: 400px;
   background-color: $white;
   position: relative;
-  @media only screen and (max-device-width: 600px){
+  @media only screen and (max-device-width: 600px) {
     height: calc(var(--vh, 1vh) * 100);
   }
 
@@ -355,14 +355,14 @@ header {
 
       }
 
-      .landing-text-slider{
+      .landing-text-slider {
         width: 60%;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 11;
-        @media (max-width: 768px){
+        @media (max-width: 768px) {
           top: 35%;
         }
 
@@ -377,19 +377,24 @@ header {
           display: inline-block;
         }
 
-        .slider-line1, .slider-line2, .slider-line3, .slider-line4, .slider-line5 {
+        .slider-line1,
+        .slider-line2,
+        .slider-line3,
+        .slider-line4,
+        .slider-line5 {
           visibility: hidden;
           color: $accent-color;
           font-weight: 700;
           margin: auto;
           position: absolute;
-          top: 0; left: 0; bottom: 0; right: 0;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
           text-align: center;
-          
         }
-      }  
       }
-
+    }
 
     .landing-animation-cont {
       position: absolute;
@@ -399,11 +404,15 @@ header {
       overflow-x: hidden;
       // vertical-align: bottom;
 
-      @keyframes changeOpacity{
-        from {opacity: 1}
-        to {opacity: 0}
+      @keyframes changeOpacity {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
       }
-  
+
       .landing-animation-cont-left {
         left: 0;
         bottom: 5%;
@@ -417,7 +426,7 @@ header {
         @media (max-width: 550px) {
           width: calc(20vw + 5vh + 4vmin);
           bottom: 2%;
-        }     
+        }
       }
 
       .landing-animation-cont-right {
@@ -433,18 +442,22 @@ header {
         @media (max-width: 550px) {
           width: calc(35vw + 10vh + 5vmin);
           bottom: 0.6vh;
-        } 
+        }
       }
     }
 
-    .landing-images-cont{
+    .landing-images-cont {
       position: absolute;
       width: 100%;
       height: 100%;
 
-      @keyframes reveal{
-        from {opacity: 0}
-        to {opacity: 1}
+      @keyframes reveal {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
       }
 
       .landing-image-left {
@@ -463,7 +476,6 @@ header {
           width: calc(20vw + 5vh + 4vmin);
           bottom: 2%;
         }
-        
 
         img {
           margin-bottom: 0;
@@ -535,15 +547,13 @@ header {
         animation-duration: 4s;
         animation-timing-function: $ease-in-out-cubic;
         @media (max-width: 550px) {
-          width: calc(35vw + 10vh + 5vmin)
+          width: calc(35vw + 10vh + 5vmin);
         }
-        
 
         img {
           margin-bottom: 0;
         }
       }
-
     }
   }
 
