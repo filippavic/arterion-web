@@ -18,27 +18,7 @@ const Landing = () => {
 
     useEffect(() => {
         //gsap timeline
-        const lltl = gsap.timeline({onComplete: function(){
-            ltl.play();
-        }})
-
-        lltl.set(".line", {
-            autoAlpha: 0,
-            y: 15,
-            skewY: 2
-        })
-        .to(".line", {
-            autoAlpha: 1,
-            y: 0,
-            ease: "power4.inOut",
-            duration: 2,
-            delay: 4,
-            skewY: 0,
-            stagger: { amount: 0.3 },
-          })
-
         const ltl = gsap.timeline({
-            paused: true,
 			onComplete: function(){
 				ltl.restart();
 			}
@@ -74,6 +54,7 @@ const Landing = () => {
             y: 0,
             ease: "power4.inOut",
             duration: 1,
+            delay: 6,
             skewY: 0,
             stagger: { amount: 0.3 },
           })
@@ -252,21 +233,21 @@ line4: 'design', line5:'animation'}, 'en');
                     <div className="landing-image-left-on">
                         <picture>
                             <source type="image/webp" srcSet={require("../images/interior_on_left.webp")} alt="Interior render"></source>
-                            <img src={require("../images/interior_on_left.png")} alt="Interior render"></img>
+                            <img draggable="false" src={require("../images/interior_on_left.png")} alt="Interior render"></img>
                         </picture>                   
                     </div>
                     
                     <div className="landing-image-left">
                         <picture>
                             <source type="image/webp" srcSet={require("../images/interior_off_left.webp")} alt="Interior render"></source>
-                            <img src={require("../images/interior_off_left.png")} alt="Interior render"></img>
+                            <img draggable="false" src={require("../images/interior_off_left.png")} alt="Interior render"></img>
                         </picture>                   
                     </div>
 
                     <div className="landing-image-right">
                         <picture>
                             <source type="image/webp" srcSet={require("../images/interior_right.webp")} alt="Interior render"></source>
-                            <img src={require("../images/interior_right.png")} alt="Interior render"></img>
+                            <img draggable="false" src={require("../images/interior_right.png")} alt="Interior render"></img>
                         </picture>
                     </div>
                 </div>

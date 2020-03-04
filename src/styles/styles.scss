@@ -1,6 +1,7 @@
 $accent-color: #997658;
 $black: #080808;
-$white: rgb(241, 241, 241);
+$grey: #484848;
+$white: #f1f1f1;
 $ease-in-out-cubic: cubic-bezier(0.145, 0.045, 0.155, 1);
 $cubic-transition: 0.5s $ease-in-out-cubic;
 
@@ -55,12 +56,12 @@ body {
 
 ::selection {
   background: $accent-color;
-  color: $black;
+  color: $white;
 }
 
 ::-moz-selection {
   background: $accent-color;
-  color: $black;
+  color: $white;
 }
 
 .container {
@@ -72,13 +73,17 @@ body {
   width: 100%;
 }
 
+img {
+  user-select: none;
+}
+
 //Header
 header {
   height: 80px;
   width: 80%;
   position: fixed;
   top: 0px;
-  z-index: 10;
+  z-index: 15;
   margin-left: auto;
   margin-right: auto;
   left: 0;
@@ -91,11 +96,11 @@ header {
     height: 80px;
     .logo {
       visibility: hidden;
+      cursor: pointer;
       a {
-        text-decoration: none;
-        font-weight: bold;
-        letter-spacing: 1.5px;
-        color: black;
+        svg{
+          fill: $grey;
+        }
       }
     }
 
@@ -105,7 +110,7 @@ header {
         text-decoration: none;
         font-weight: bold;
         letter-spacing: 1.5px;
-        color: black;
+        color: $grey;
         cursor: pointer;
 
         &:before {
@@ -242,7 +247,7 @@ header {
     a {
       text-decoration: none;
       font-size: 19px;
-      color: black;
+      color: $black;
       font-weight: 600;
       transition: 0.5s $ease-in-out-cubic;
       margin-bottom: 20px;
@@ -345,7 +350,7 @@ header {
         opacity: 0.7;
         @media (max-width: 768px){
           top: 30%;
-          width: 40%;
+          width: 60%;
         }
 
       }
@@ -667,17 +672,17 @@ header {
   min-height: 500px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  background: linear-gradient(-3deg, black 0%, black 90%, transparent 90.2%);
+  justify-content: space-between;
+  background: linear-gradient(3deg, black 0%, black 89%, #D5C7BE 89.2%);
   position: relative;
 
   .contact-top {
     flex-basis: 40%;
-    padding-top: 10%;
+    padding-top: 10vh;
     padding-left: 10%;
     z-index: 2;
     @media only screen and (max-device-width: 768px) {
-      padding-top: 20%;
+      padding-top: 25%;
     }
 
     .contact-animation-cont {
@@ -710,10 +715,6 @@ header {
     flex-direction: row;
     justify-content: space-around;
     z-index: 2;
-    background-color: #000;
-    @media only screen and (max-device-width: 768px) {
-      padding-top: 10%;
-    }
 
     .contact-left {
       display: flex;
@@ -805,6 +806,7 @@ header {
     @media only screen and (max-device-width: 768px) {
       justify-content: center;
       align-items: flex-end;
+      padding-right: 0px;
     }
 
     a {

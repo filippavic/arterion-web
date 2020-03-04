@@ -35,7 +35,7 @@ const Image = props => (
         return null;
       }
 
-      return <Img className="image" alt={props.alt} fluid={image.node.childImageSharp.fluid} />;
+      return <Img className="image" draggable={false} alt={props.alt} fluid={image.node.childImageSharp.fluid} />;
     }}
   />
 );
