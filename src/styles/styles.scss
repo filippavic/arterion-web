@@ -64,6 +64,25 @@ body {
   color: $white;
 }
 
+::-webkit-scrollbar-track
+{
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: $grey;
+}
+
+::-webkit-scrollbar
+{
+	width: 7px;
+	background-color: $grey;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 3.5px;
+	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #c09e80;
+}
+
 .container {
   width: 100%;
   margin: 0 auto;
@@ -678,10 +697,13 @@ header {
 
   .contact-top {
     flex-basis: 40%;
-    padding-top: 10vh;
+    padding-top: 10%;
     padding-left: 10%;
     z-index: 2;
     @media only screen and (max-device-width: 768px) {
+      padding-top: 35%;
+    }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1500px){
       padding-top: 25%;
     }
 
@@ -699,11 +721,11 @@ header {
     }
 
     h1 {
-      font-size: calc(50px + (16 - 10) * ((100vw - 300px) / (1600 - 300)));
+      font-size: calc(25px + (50 - 25) * ((100vw - 300px) / (1600 - 300)));
     }
 
     h2 {
-      font-size: calc(30px + (16 - 10) * ((100vw - 300px) / (1600 - 300)));
+      font-size: calc(20px + (35 - 20) * ((100vw - 300px) / (1600 - 300)));
       font-weight: 600;
     }
   }
