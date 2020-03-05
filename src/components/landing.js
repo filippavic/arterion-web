@@ -238,21 +238,24 @@ const Landing = () => {
                 <div className="landing-images-cont">
                     <div className="landing-image-left-on">
                         <picture>
-                            <source type="image/webp" srcSet={require("../images/interior_on_left.webp")} alt="Interior render"></source>
+                            <source type="image/webp" srcSet={require("../images/interior_on_left.webp")} alt="Interior render" media="(min-width: 800px)"></source>
+                            <source type="image/webp" srcSet={require("../images/interior_on_left_s.webp")} alt="Interior render"></source>
                             <img draggable="false" src={require("../images/interior_on_left.png")} alt="Interior render"></img>
                         </picture>                   
                     </div>
                     
                     <div className="landing-image-left">
                         <picture>
-                            <source type="image/webp" srcSet={require("../images/interior_off_left.webp")} alt="Interior render"></source>
+                            <source type="image/webp" srcSet={require("../images/interior_off_left.webp")} alt="Interior render" media="(min-width: 800px)"></source>
+                            <source type="image/webp" srcSet={require("../images/interior_off_left_s.webp")} alt="Interior render"></source>
                             <img draggable="false" src={require("../images/interior_off_left.png")} alt="Interior render"></img>
                         </picture>                   
                     </div>
 
                     <div className="landing-image-right">
                         <picture>
-                            <source type="image/webp" srcSet={require("../images/interior_right.webp")} alt="Interior render"></source>
+                            <source type="image/webp" srcSet={require("../images/interior_right.webp")} alt="Interior render" media="(min-width: 800px)"></source>
+                            <source type="image/webp" srcSet={require("../images/interior_right_s.webp")} alt="Interior render"></source>
                             <img draggable="false" src={require("../images/interior_right.png")} alt="Interior render"></img>
                         </picture>
                     </div>
