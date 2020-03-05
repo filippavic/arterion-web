@@ -12,17 +12,25 @@ const Landing = () => {
     //Lottie sketches
     const [isStopped, setStopped] = useState(true);
 
+    //timeout za lottie sketch
     setTimeout(function(){
         setStopped(false);
       }, 1200);
 
+    
     useEffect(() => {
         //gsap timeline
         const ltl = gsap.timeline({
-			onComplete: function(){
-				ltl.restart();
-			}
-		})
+          paused:true,
+          onComplete: function(){
+            ltl.restart();
+			    }
+        })
+    
+        //timeout za text slider
+        setTimeout(function(){
+          ltl.play();
+        }, 5500);
     
         ltl.set(".slider-line1", {
             autoAlpha: 0,
@@ -54,7 +62,6 @@ const Landing = () => {
             y: 0,
             ease: "power4.inOut",
             duration: 1,
-            delay: 6,
             skewY: 0,
             stagger: { amount: 0.3 },
           })

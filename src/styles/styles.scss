@@ -113,12 +113,20 @@ header {
     align-items: center;
     justify-content: space-between;
     height: 80px;
+
     .logo {
       visibility: hidden;
-      cursor: pointer;
       a {
-        svg{
-          fill: $grey;
+        text-decoration: none;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+        color: $grey;
+        cursor: pointer;
+        transition: 0.5s color $ease-in-out-cubic;
+
+        &:hover {
+          color: $accent-color;
+          transition: 0.5s color $ease-in-out-cubic;
         }
       }
     }
@@ -131,6 +139,7 @@ header {
         letter-spacing: 1.5px;
         color: $grey;
         cursor: pointer;
+        transition: 0.5s color $ease-in-out-cubic;
 
         &:before {
           content: "";
@@ -752,6 +761,7 @@ header {
         margin-bottom: 20px;
         position: relative;
         width: fit-content;
+        transition: 0.5s color $ease-in-out-cubic;
 
         &:before {
           content: "";

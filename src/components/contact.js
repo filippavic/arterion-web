@@ -91,7 +91,7 @@ const Contact = () => {
       <div className="contact-middle">
         <div className="contact-left">
           <a href="mailto:info@arterion.design">info@arterion.design</a>
-          <a href="tel:385 123 456">+385 123 456</a>
+          <a href="tel:385913331810">+385 91 333 1810</a>
         </div>
         
 

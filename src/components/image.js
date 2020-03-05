@@ -17,7 +17,7 @@ const Image = props => (
               name
               childImageSharp {
                 fluid (quality: 90) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }

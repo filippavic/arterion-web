@@ -1,118 +1,84 @@
 import React from "react"
 import Image from "../components/image"
 import { Parallax } from "react-scroll-parallax"
-import translate from "translate-js"
 
 import "./gallery.scss"
 
 function Gallery() {
-
-  //localization
-  function getLocale() {
-    var lang = ""
-    if (typeof navigator !== "undefined") {
-      if (navigator.languages !== undefined) lang = navigator.languages[0]
-      else lang = navigator.language
-
-      if (lang.substring(0, 2).localeCompare("hr") !== 0) return "en"
-      else return "hr"
-    }
-  }
-
-  var locale = getLocale()
-
-  translate.add(
-    {
-      description1: "Lorem ipsum na hrvatskom bla bla",
-      description2: "Lorem ipsum na hrvatskom bla bla",
-      description3: "Lorem ipsum na hrvatskom bla bla",
-      description4: "Lorem ipsum na hrvatskom bla bla",
-      description5: "Lorem ipsum na hrvatskom bla bla",
-      description6: "Lorem ipsum na hrvatskom bla bla",
-    },
-    "hr"
-  )
-  translate.add(
-    {
-      description1: "Lorem ipsum na engleskom bla bla",
-      description2: "Lorem ipsum na engleskom bla bla",
-      description3: "Lorem ipsum na engleskom bla bla",
-      description4: "Lorem ipsum na engleskom bla bla",
-      description5: "Lorem ipsum na engleskom bla bla",
-      description6: "Lorem ipsum na engleskom bla bla",
-    },
-    "en"
-  )
-
-
   return (
     <div className="gallery">
+
       <div className="galleryContainer">
         <div className="leftTopGallery"></div>
         <div className="rightTopGallery">
           <Parallax className="custom-class" y={[-15, 15]} tagOuter="figure">
-            <Image alt="Interior visualization" filename="interior_1.jpg" />
+            <Image alt="Family house exterior 3D visualization." filename="haus_4k.jpg" />
           </Parallax>
-          <h3 className="description">
-            {translate("description1", null, { locale: locale })}
-          </h3>
         </div>
       </div>
+
       <div className="bottomGalleryContainer">
         <div className="leftBottomGallery">
-          <Parallax className="custom-class" y={[-15, 15]} tagOuter="figure">
-            <Image alt="Interior visualization" filename="interior_2.jpg" />
+          <Parallax className="custom-class" y={[-20, 15]} tagOuter="figure">
+            <Image alt="Modern penthouse interior 3D visualizaton." filename="penthouse.jpg" />
           </Parallax>
-          <h3 className="description">
-            {translate("description2", null, { locale: locale })}
-          </h3>
         </div>
         <div className="rightBottomGallery"></div>
       </div>
+
+      <div className="galleryDualContainer">
+        <div className="leftDualGallery">
+          <Parallax className="custom-class" y={[-15, 15]} tagOuter="figure">
+            <Image alt="Modern sofa 3D advertisement." filename="1seater_4k.jpg" />
+          </Parallax>
+        </div>
+        <div className="rightDualGallery">
+          <Parallax className="custom-class" y={[-20, 20]} tagOuter="figure">
+            <Image alt="Product close-up render." filename="closeup.jpg" />
+          </Parallax>
+        </div>
+      </div>
+
+      <div className="bottomGalleryContainer">
+        <div className="leftBottomGallery">
+          <Parallax className="custom-class" y={[-15, 15]} tagOuter="figure">
+            <Image alt="Living room visualization." filename="render_night_2K_sig.jpg" />
+          </Parallax>
+        </div>
+        <div className="rightBottomGallery"></div>
+      </div>
+
+      <div className="galleryDualContainer">
+        <div className="leftDualGallery">
+          <Parallax className="custom-class" y={[-15, 15]} tagOuter="figure">
+            <Image alt="Modern kitchen interior." filename="kitchen_2K.jpg" />
+          </Parallax>
+        </div>
+        <div className="rightDualGallery">
+          <Parallax className="custom-class" y={[-20, 20]} tagOuter="figure">
+            <Image alt="Product visualization - perfume." filename="parfume_4k.jpg" />
+          </Parallax>
+        </div>
+      </div>
+
+      <div className="bottomGalleryContainer">
+        <div className="leftBottomGallery">
+          <Parallax className="custom-class" y={[-15, 15]} tagOuter="figure">
+            <Image alt="Modern architecture conceptual model." filename="maquete_4k.jpg" />
+          </Parallax>
+        </div>
+        <div className="rightBottomGallery"></div>
+      </div>
+
       <div className="galleryContainer">
         <div className="leftTopGallery"></div>
         <div className="rightTopGallery">
           <Parallax className="custom-class" y={[-15, 15]} tagOuter="figure">
-            <Image alt="Exterior visualization" filename="exterior_1.jpg" />
+            <Image alt="Low poly game asset visualization." filename="witch_4k.jpg" />
           </Parallax>
-          <h3 className="description">
-            {translate("description3", null, { locale: locale })}
-          </h3>
         </div>
       </div>
-      <div className="bottomGalleryContainer">
-        <div className="leftBottomGallery">
-          <Parallax className="custom-class" y={[-15, 15]} tagOuter="figure">
-            <Image alt="Exterior visualization" filename="exterior_2.jpg" />
-          </Parallax>
-          <h3 className="description">
-            {translate("description4", null, { locale: locale })}
-          </h3>
-        </div>
-        <div className="rightBottomGallery"></div>
-      </div>
-      <div className="galleryContainer">
-        <div className="leftTopGallery"></div>
-        <div className="rightTopGallery">
-          <Parallax className="custom-class" y={[-15, 15]} tagOuter="figure">
-            <Image alt="Product visualization" filename="product_1.jpg" />
-          </Parallax>
-          <h3 className="description">
-            {translate("description5", null, { locale: locale })}
-          </h3>
-        </div>
-      </div>
-      <div className="bottomGalleryContainer">
-        <div className="leftBottomGallery">
-          <Parallax className="custom-class" y={[-15, 15]} tagOuter="figure">
-            <Image alt="Product visualization" filename="product_2.jpg" />
-          </Parallax>
-          <h3 className="description">
-            {translate("description6", null, { locale: locale })}
-          </h3>
-        </div>
-        <div className="rightBottomGallery"></div>
-      </div>
+      
     </div>
   )
 }
