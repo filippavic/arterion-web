@@ -65,17 +65,17 @@ function IndexPage() {
   translate.add(
     {
       metaTitle:
-        "ARTERION | usluge vizualizacije, modeliranja, teksturiranja, dizajna i animacije ",
+        "ARTERION | usluge vizualizacije, modeliranja, shadinga, dizajna i animacije ",
       metaDesc:
-        "ARTERION obrt za dizajn pruža usluge izrade 3D vizualizacija interijera i eksterijera, modeliranja i teksturiranja, dizajna te animacije.",
+        "ARTERION obrt za dizajn pruža usluge izrade 3D vizualizacija interijera i eksterijera, modeliranja i shadinga, dizajna te animacije.",
     },
     "hr"
   )
   translate.add(
     {
-      metaTitle: "ARTERION | visualization, modeling, texturing, design and animation",
+      metaTitle: "ARTERION | visualization, modeling, shading, design and animation",
       metaDesc:
-        "ARTERION offers 3D visualization services, including interior and exterior renders, product modeling and texturing, design and animation.",
+        "ARTERION offers 3D visualization services, including interior and exterior renders, product modeling and shading, design and animation.",
     },
     "en"
   )
@@ -95,20 +95,20 @@ function IndexPage() {
           <meta name="og:url" content="http://arterion.design" />
           <meta
             name="og:site_name"
-            content="ARTERION | visualization, modeling, texturing, design and animation"/>
+            content="ARTERION | visualization, modeling, shading, design and animation"/>
           <meta 
             name="og:description" 
-            content="ARTERION offers 3D visualization services, including interior and exterior renders, product modeling and texturing, design and animation."/>
+            content="ARTERION offers 3D visualization services, including interior and exterior renders, product modeling and shading, design and animation."/>
           <meta
             name="google-site-verification"
             content="ErRyGpuFwE1Gita3NspBPxJes2cGWcl8swkuUNB3-00"
           />
            <meta
             name="twitter:site_name"
-            content="ARTERION | visualization, modeling, texturing, design and animation"/>
+            content="ARTERION | visualization, modeling, shading, design and animation"/>
           <meta 
             name="twitter:description" 
-            content="ARTERION offers 3D visualization services, including interior and exterior renders, product modeling and texturing, design and animation."/>
+            content="ARTERION offers 3D visualization services, including interior and exterior renders, product modeling and shading, design and animation."/>
           <script type="application/ld+json">{`{
             "@context": "https://schema.org",
             "@type": "LocalBusiness",

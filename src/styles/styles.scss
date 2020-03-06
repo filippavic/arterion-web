@@ -75,6 +75,10 @@ img {
   user-select: none;
 }
 
+*:focus {
+  outline: none;
+}
+
 //Header
 header {
   height: 80px;

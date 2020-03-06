@@ -55,7 +55,7 @@ const Contact = () => {
       country: "Hrvatska",
       owner: "Siniša Slovenec",
       title1: "Sviđa Vam se što vidite?",
-      title2: "Slobodno se javite.",
+      title2: "Zaposlite me.",
     },
     "hr"
   )
@@ -64,7 +64,7 @@ const Contact = () => {
       country: "Croatia",
       owner: "Siniša Slovenec",
       title1: "Like what you see?",
-      title2: "Feel free to contact me.",
+      title2: "Hire me.",
     },
     "en"
   )
@@ -98,8 +98,10 @@ const Contact = () => {
         <div className="contact-right"> 
           <h3 id="company-title">ARTERION obrt za dizajn</h3>
           <h3>{translate("owner", null, { locale: locale })}</h3>
-          <h3>Jalšje 22, Veliko Trgovišće</h3>
+          <h3>Jalšje 22, 49214 Veliko Trgovišće</h3>
           <h3>{translate("country", null, { locale: locale })}</h3>
+          <h3>OIB: 97412728656</h3>
+          <h3>IBAN: HR4723400091160587893</h3>
         </div>
       </div>
       </ScrollTrigger>

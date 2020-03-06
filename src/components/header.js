@@ -117,8 +117,10 @@ function Header() {
 
         <div className="company-info">
             <h3>{translate('owner', null, {locale: locale})}</h3>
-            <h3>Jalšje 22, Veliko Trgovišće</h3>
+            <h3>Jalšje 22, 49214 Veliko Trgovišće</h3>
             <h3>{translate('country', null, {locale: locale})}</h3>
+            <h3>OIB: 97412728656</h3>
+            <h3>IBAN: HR4723400091160587893</h3>
         </div>
       </div>
     </div>

@@ -159,9 +159,9 @@ const Landing = () => {
     
     var locale = getLocale();
     
-    translate.add({line1: 'vizualizacije', line2: 'modeliranje', line3: 'teksturiranje',
+    translate.add({line1: 'vizualizacije', line2: 'modeliranje', line3: 'shading',
     line4: 'dizajn', line5: 'animacije'}, 'hr');
-    translate.add({line1: 'visualization', line2: 'modelling', line3: 'texturing',
+    translate.add({line1: 'visualization', line2: 'modeling', line3: 'shading',
     line4: 'design', line5:'animation'}, 'en');
 
     //Lottie options
