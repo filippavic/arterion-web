@@ -13,17 +13,16 @@ import "../styles/styles.scss"
 
 function IndexPage() {
   useEffect(() => {
-
     //scroll to top
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0)
 
     //gsap timeline
     const tl = gsap.timeline()
 
     tl.set(".header-menu, .logo", {
-        autoAlpha: 0,
-        y: 10,
-      })
+      autoAlpha: 0,
+      y: 10,
+    })
       .set(".icon-scroll", {
         autoAlpha: 0,
         y: -10,
@@ -43,9 +42,9 @@ function IndexPage() {
   }, [])
 
   //mobile viewport
-  if(typeof window !== "undefined"){
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  if (typeof window !== "undefined") {
+    let vh = window.innerHeight * 0.01
+    document.documentElement.style.setProperty("--vh", `${vh}px`)
   }
 
   //localization
@@ -73,7 +72,8 @@ function IndexPage() {
   )
   translate.add(
     {
-      metaTitle: "ARTERION | visualization, modeling, shading, design and animation",
+      metaTitle:
+        "ARTERION | visualization, modeling, shading, design and animation",
       metaDesc:
         "ARTERION offers 3D visualization services, including interior and exterior renders, product modeling and shading, design and animation.",
     },
@@ -87,32 +87,40 @@ function IndexPage() {
           <title>{translate("metaTitle", null, { locale: locale })}</title>
           <meta
             name="description"
-            content={translate("metaDesc", null, { locale: locale })} />
+            content={translate("metaDesc", null, { locale: locale })}
+          />
           <meta name="theme-color" content="#997658" />
           <meta name="msapplication-navbutton-color" content="#997658" />
-          <meta name="apple-mobile-web-app-status-bar-style" content="#997658" />
-          <meta name="copyright"content="apeiron" />
+          <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="#997658"
+          />
+          <meta name="copyright" content="apeiron" />
           <meta name="og:url" content="http://arterion.design" />
           <meta
             name="og:site_name"
-            content="ARTERION | visualization, modeling, shading, design and animation"/>
-          <meta 
-            name="og:description" 
-            content="ARTERION offers 3D visualization services, including interior and exterior renders, product modeling and shading, design and animation."/>
+            content="ARTERION | visualization, modeling, shading, design and animation"
+          />
+          <meta
+            name="og:description"
+            content="ARTERION offers 3D visualization services, including interior and exterior renders, product modeling and shading, design and animation."
+          />
           <meta
             name="google-site-verification"
             content="ErRyGpuFwE1Gita3NspBPxJes2cGWcl8swkuUNB3-00"
           />
-           <meta
+          <meta
             name="twitter:site_name"
-            content="ARTERION | visualization, modeling, shading, design and animation"/>
-          <meta 
-            name="twitter:description" 
-            content="ARTERION offers 3D visualization services, including interior and exterior renders, product modeling and shading, design and animation."/>
+            content="ARTERION | visualization, modeling, shading, design and animation"
+          />
+          <meta
+            name="twitter:description"
+            content="ARTERION offers 3D visualization services, including interior and exterior renders, product modeling and shading, design and animation."
+          />
           <script type="application/ld+json">{`{
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            "@id": "http://arterion.design",
+            "@id": "https://arterion-design.hr",
             "name": "ARTERION obrt za dizajn",
             "address": {
               "@type": "PostalAddress",
@@ -122,7 +130,7 @@ function IndexPage() {
               "postalCode": "49214",
               "addressCountry": "HR"
             },
-            "url": "http://arterion.design",
+            "url": "https://arterion-design.hr",
             "telephone": "+385913331810",
             "logo": {
               "@type": "ImageObject",
