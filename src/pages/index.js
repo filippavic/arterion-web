@@ -96,7 +96,7 @@ function IndexPage() {
             content="#997658"
           />
           <meta name="copyright" content="apeiron" />
-          <meta name="og:url" content="http://arterion.design" />
+          <meta name="og:url" content="https://arterion-design.hr" />
           <meta
             name="og:site_name"
             content="ARTERION | visualization, modeling, shading, design and animation"
@@ -136,7 +136,7 @@ function IndexPage() {
               "@type": "ImageObject",
               "width": 800,
               "height": 89,
-              "url": "https://i.ibb.co/XLkrkY6/output-onlinepngtools.png"
+              "url": "http://arterion-design.hr/arterion_logo.png"
             },
         }`}</script>
         </Helmet>

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `ARTERION obrt za dizajn`,
-    description: `ARTERION obrt za dizajn radi 3D vizualizacije interijera, eksterijera i raznih proizvoda.`,
+    title: `ARTERION | visualization, modeling, shading, design and animation`,
+    description: `ARTERION offers 3D visualization services, including interior and exterior renders, product modeling and shading, design and animation.`,
     author: `apeiron`,
   },
   plugins: [

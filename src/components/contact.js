@@ -90,7 +90,7 @@ const Contact = () => {
       <ScrollTrigger onEnter={() => onEnterViewport()} onExit={() => onExitViewport()}>
       <div className="contact-middle">
         <div className="contact-left">
-          <a href="mailto:info@arterion.design">info@arterion.design</a>
+          <a href="mailto:info@arterion-design.hr">info@arterion-design.hr</a>
           <a href="tel:385913331810">+385 91 333 1810</a>
         </div>
         
